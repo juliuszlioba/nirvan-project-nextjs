@@ -8,6 +8,10 @@ import AddPost from './form'
 // do not cache this page
 export const revalidate = 0
 
+export const metadata = {
+	title: 'Add new Story',
+}
+
 export default async function Page() {
 	const supabase = createServerComponentClient<Database>({ cookies })
 

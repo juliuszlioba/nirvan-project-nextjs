@@ -7,7 +7,7 @@ CREATE TABLE posts (
 	createdat timestamptz DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	updatedat timestamptz DEFAULT CURRENT_TIMESTAMP NOT NULL,
   content text NOT NULL,
-	user_id uuid NOT NULL DEFAULT auth.uid() references auth.users
+	user_id uuid DEFAULT auth.uid() references auth.users
 );
 
 CREATE POLICY "Enable read posts for all users"

@@ -4,6 +4,10 @@ import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import LoginForm from './login-form'
 
+export const metadata = {
+	title: 'Login',
+}
+
 export default async function Page() {
 	const supabase = createServerComponentClient<Database>({ cookies })
 

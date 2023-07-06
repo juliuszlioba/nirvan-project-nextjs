@@ -59,7 +59,7 @@ export default async function Home() {
 										{item.title}
 									</Link>
 									<span>
-										by {item.author}, year {item.year}
+										by {item.author}, published {item.year}
 									</span>
 								</div>
 

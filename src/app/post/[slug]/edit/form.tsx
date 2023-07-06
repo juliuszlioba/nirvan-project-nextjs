@@ -2,17 +2,14 @@
 
 import { Fragment, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import {
-	Session,
-	createClientComponentClient,
-} from '@supabase/auth-helpers-nextjs'
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import slugify from '@/utils/slugify'
 import { toInt } from 'radash'
 import { Dialog, Transition } from '@headlessui/react'
+import Link from 'next/link'
 
 export default function EditPost({
 	post,
-	session,
 }: {
 	post: {
 		author: string
@@ -25,7 +22,6 @@ export default function EditPost({
 		user_id: string | null
 		year: number
 	} | null
-	session: Session
 }) {
 	const [title, setTitle] = useState(post?.title || undefined)
 	const [author, setAuthor] = useState(post?.author || undefined)
@@ -122,7 +118,7 @@ export default function EditPost({
 				placeholder="Title"
 				value={title || undefined}
 				onChange={(event) => setTitle(event.currentTarget.value)}
-				className="w-full rounded-2xl bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+				className="w-full rounded-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
 			/>
 			<div className="flex flex-col gap-4 md:flex-row">
 				<input
@@ -131,7 +127,7 @@ export default function EditPost({
 					placeholder="Author"
 					value={author || undefined}
 					onChange={(event) => setAuthor(event.currentTarget.value)}
-					className="w-full rounded-2xl bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+					className="w-full rounded-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
 				/>
 				<input
 					type="text"
@@ -140,16 +136,44 @@ export default function EditPost({
 					value={year}
 					maxLength={4}
 					onChange={(event) => handleYearSet(event.currentTarget.value)}
-					className="w-full rounded-2xl bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800 md:w-1/3"
+					className="w-full rounded-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800 md:w-1/3"
 				/>
 			</div>
-			<textarea
-				placeholder="Content"
-				rows={16}
-				value={content || undefined}
-				onChange={(event) => setContent(event.currentTarget.value)}
-				className="w-full rounded-2xl bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
-			></textarea>
+
+			<div className="flex flex-col">
+				<textarea
+					placeholder="Content"
+					rows={16}
+					value={content || undefined}
+					onChange={(event) => setContent(event.currentTarget.value)}
+					className="w-full rounded-t-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+				></textarea>
+				<div className="rounded-b-lg border-t-2 border-dashed border-gray-200 bg-gray-100 p-4 dark:border-gray-700 dark:bg-gray-800">
+					<h2 className="text-lg">Help:</h2>
+					<p>Formating of text is based on Markdown Syntax.</p>
+					<Link
+						href="https://www.markdownguide.org/cheat-sheet/#basic-syntax"
+						target="_blank"
+						className="flex items-center gap-1 hover:text-fuchsia-700"
+					>
+						Open Markdown cheat sheet{' '}
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							strokeWidth={1.5}
+							stroke="currentColor"
+							className="h-5 w-5"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+							/>
+						</svg>
+					</Link>
+				</div>
+			</div>
 			{formError && (
 				<div className="flex items-center gap-1 text-red-500">
 					<svg
@@ -192,7 +216,7 @@ export default function EditPost({
 			<div className="flex items-center justify-between gap-2">
 				<button
 					onClick={handleSubmit}
-					className="flex items-center gap-2 rounded-2xl border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700"
+					className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700"
 				>
 					Save
 					<svg
@@ -213,32 +237,30 @@ export default function EditPost({
 					</svg>
 				</button>
 
-				{session.user.id === post.user_id && (
-					<button
-						onClick={openModal}
-						className="flex items-center gap-2 rounded-2xl border-2 border-gray-300 px-4 py-2 text-red-700 hover:border-red-600 hover:text-red-600 dark:border-gray-800 dark:hover:border-red-600"
+				<button
+					onClick={openModal}
+					className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 text-red-700 hover:border-red-600 hover:text-red-600 dark:border-gray-800 dark:hover:border-red-600"
+				>
+					Delete
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth={1.5}
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						className="lucide lucide-trash-2"
 					>
-						Delete
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							strokeWidth={1.5}
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							className="lucide lucide-trash-2"
-						>
-							<path d="M3 6h18" />
-							<path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
-							<path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
-							<line x1="10" x2="10" y1="11" y2="17" />
-							<line x1="14" x2="14" y1="11" y2="17" />
-						</svg>
-					</button>
-				)}
+						<path d="M3 6h18" />
+						<path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+						<path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+						<line x1="10" x2="10" y1="11" y2="17" />
+						<line x1="14" x2="14" y1="11" y2="17" />
+					</svg>
+				</button>
 			</div>
 
 			<Transition appear show={deleteModal} as={Fragment}>
@@ -266,7 +288,7 @@ export default function EditPost({
 								leaveFrom="opacity-100 scale-100"
 								leaveTo="opacity-0 scale-95"
 							>
-								<Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-gray-100 p-6 text-left align-middle shadow-xl transition-all dark:bg-gray-950">
+								<Dialog.Panel className="dark:bg-gray-900 w-full max-w-md transform overflow-hidden rounded-lg bg-gray-100 p-6 text-left align-middle shadow-xl transition-all">
 									<Dialog.Title
 										as="h3"
 										className="text-2xl font-medium leading-6 text-gray-900 dark:text-gray-200"
@@ -283,7 +305,7 @@ export default function EditPost({
 									<div className="mt-4 flex gap-2">
 										<button
 											type="button"
-											className="flex items-center gap-2 rounded-2xl border-2 border-gray-300 px-4 py-2 text-red-700 hover:border-red-600 hover:text-red-600 dark:border-gray-800 dark:hover:border-red-600"
+											className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 text-red-700 hover:border-red-600 hover:text-red-600 dark:border-gray-800 dark:hover:border-red-600"
 											onClick={handleDelete}
 										>
 											Confirm
@@ -291,7 +313,7 @@ export default function EditPost({
 
 										<button
 											type="button"
-											className="flex items-center gap-2 rounded-2xl border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700"
+											className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700"
 											onClick={closeModal}
 										>
 											Cancel

@@ -6,6 +6,10 @@ import { redirect } from 'next/navigation'
 import WelcomeMessage from './message'
 import { ContinueButton } from './button'
 
+export const metadata = {
+	title: 'Welcome',
+}
+
 export default async function Page() {
 	const supabase = createServerComponentClient<Database>({ cookies })
 

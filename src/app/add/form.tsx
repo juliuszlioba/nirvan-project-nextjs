@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import slugify from '@/utils/slugify'
+import Link from 'next/link'
 
 export default function AddPost() {
 	const titleRef = useRef<HTMLInputElement>(null)
@@ -57,7 +58,7 @@ export default function AddPost() {
 				type="text"
 				name="title"
 				placeholder="Title"
-				className="w-full rounded-2xl bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+				className="w-full rounded-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
 			/>
 			<div className="flex flex-col gap-4 md:flex-row">
 				<input
@@ -65,22 +66,51 @@ export default function AddPost() {
 					type="text"
 					name="author"
 					placeholder="Author"
-					className="w-full rounded-2xl bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+					className="w-full rounded-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
 				/>
 				<input
 					ref={yearRef}
 					type="text"
 					name="year"
 					placeholder="Year"
-					className="w-full rounded-2xl bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800 md:w-1/3"
+					className="w-full rounded-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800 md:w-1/3"
 				/>
 			</div>
-			<textarea
-				ref={contentRef}
-				placeholder="Content"
-				rows={16}
-				className="w-full rounded-2xl bg-gray-100 px-4 py-2  focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
-			></textarea>
+			<div className="flex flex-col">
+				<textarea
+					ref={contentRef}
+					placeholder="Content"
+					rows={16}
+					className="w-full rounded-t-lg bg-gray-100 px-4 py-2  focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+				></textarea>
+
+				<div className="rounded-b-lg border-t-2 border-dashed border-gray-200 bg-gray-100 p-4 dark:border-gray-700 dark:bg-gray-800">
+					<h2 className="text-lg">Help:</h2>
+					<p>Formating of text is based on Markdown Syntax.</p>
+					<Link
+						href="https://www.markdownguide.org/cheat-sheet/#basic-syntax"
+						target="_blank"
+						className="flex items-center gap-1 hover:text-fuchsia-700"
+					>
+						Open Markdown cheat sheet{' '}
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							strokeWidth={1.5}
+							stroke="currentColor"
+							className="h-5 w-5"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+							/>
+						</svg>
+					</Link>
+				</div>
+			</div>
+
 			{formError && (
 				<div className="flex items-center gap-1 text-red-500">
 					<svg
@@ -100,6 +130,7 @@ export default function AddPost() {
 					Not everything is filled!
 				</div>
 			)}
+
 			{dbError && (
 				<div className="flex items-center gap-1 text-red-500">
 					<svg
@@ -121,7 +152,7 @@ export default function AddPost() {
 			)}
 			<button
 				onClick={handleSubmit}
-				className="flex items-center gap-2 rounded-2xl border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700"
+				className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700"
 			>
 				Save
 				<svg
