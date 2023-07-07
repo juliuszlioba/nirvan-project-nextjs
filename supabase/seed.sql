@@ -1,7 +1,6 @@
 INSERT INTO posts (title, author, year, slug, content)
 VALUES
-  ('The Last Journey', 'ChatGPT', 2023, 'the-last-journey','
-In the year 2187, Earth had become an uninhabitable wasteland. The effects of pollution, climate change, and wars had taken their toll on the planet, leaving humanity desperate for a new home. The Interstellar Exploration Program was launched to search for habitable planets in distant galaxies, and after years of searching, a potential candidate was discovered.
+  ('The Last Journey', 'ChatGPT', 2023, 'the-last-journey','In the year 2187, Earth had become an uninhabitable wasteland. The effects of pollution, climate change, and wars had taken their toll on the planet, leaving humanity desperate for a new home. The Interstellar Exploration Program was launched to search for habitable planets in distant galaxies, and after years of searching, a potential candidate was discovered.
 
 The planet, named Elysium, seemed to possess the necessary conditions for human colonization. It was lush with vegetation, had a breathable atmosphere, and had abundant resources. A massive spaceship called the Hope&rsquo;s Ark was constructed, designed to transport a select group of people to this new world.
 
@@ -23,8 +22,7 @@ As her time drew to a close, Dr. Hartley reflected on her journey. She had been 
 
 And so, the story of Dr. Rebecca Hartley, the last witness to Earth&rsquo;s demise and the architect of Elysium, passed into legend. Humanity thrived on their new home, forever grateful to the woman who had led them on their last journey.
 '),
-  ('The Quantum Puzzle', 'ChatGPT', 2023, 'the-quantum-puzzle', '
-In the year 2150, a team of scientists at the Quantum Research Institute made a groundbreaking discovery—an ancient artifact of unknown origin that possessed unimaginable power. The artifact, dubbed the Quantum Puzzle, had the ability to manipulate reality itself.
+  ('The Quantum Puzzle', 'ChatGPT', 2023, 'the-quantum-puzzle', 'In the year 2150, a team of scientists at the Quantum Research Institute made a groundbreaking discovery—an ancient artifact of unknown origin that possessed unimaginable power. The artifact, dubbed the Quantum Puzzle, had the ability to manipulate reality itself.
 
 Dr. Emma Sullivan, a brilliant physicist, led the team in studying and unlocking the secrets of the Quantum Puzzle. After years of intense research, they finally cracked its code, and it revealed a hidden message.
 
@@ -63,4 +61,55 @@ The team nodded in agreement, understanding the weight of their newfound power. 
 Dr. Sullivan: "Let us return to our universe, armed with the knowledge we have gained. Together, we will strive to solve the problems that plague our world, using the Quantum Puzzle as a force for good."
 
 And so, the team bid farewell to the Quantum Realm and returned to their laboratory, their minds filled with possibilities and the determination to shape a better future. The Quantum Puzzle had become their guide, leading them on a path of discovery and transformation, and their journey had only just begun.
-');
+'),
+('Formating example', 'Julius', 2023, 'formating-example','# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quis quos velit esse cumque laborum, enim aliquid omnis aliquam dolore facere exercitationem obcaecati optio natus illum ipsam ratione impedit? Earum?
+
+**bold text**
+
+*italicized text*
+
+> blockquote
+
+1. First item
+2. Second item
+3. Third item
+
+- First item
+- Second item
+- Third item
+
+`code something`
+
+[Link](https://www.google.com)
+___
+
+#### Also posible to include external images:
+
+![The San Juan Mountains are beautiful!](https://images.unsplash.com/photo-1521946066376-4a1493ee78df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80 "San Juan Mountains")
+
+___
+
+#### More advanced syntax:
+
+Works only with classes that I implament into website. Currently only these `text-center` `ext-right` `underline` `overline` `line-through` `indent-8` works,  but I can add more by request.
+
+<p class="text-center">Centered text</p>
+
+<p class="text-right">Right aligned text</p>
+
+<p class="underline">underline</p>
+
+<p class="overline">overline</p>
+
+<p class="line-through">line-through</p>
+
+<p class="indent-8">Indented text. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quis quos velit esse cumque laborum, enim aliquid omnis aliquam dolore facere exercitationem obcaecati optio natus illum ipsam ratione impedit? Earum?</p>'
+);

@@ -5,6 +5,7 @@ import { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Literata } from 'next/font/google'
 import EditFooter from './edit'
+import ShareButtons from './share'
 
 type Props = {
 	params: { slug: string }
@@ -67,6 +68,7 @@ export default async function Page({ params }: Props) {
 				<p className="italic text-gray-500">by {data.author}</p>
 				<MDXRemote source={data?.content as string} />
 				{session?.user.id === data.user_id && <EditFooter slug={data?.slug} />}
+				<ShareButtons />
 			</div>
 			<div className="hidden">
 				<p className="text-right"></p>

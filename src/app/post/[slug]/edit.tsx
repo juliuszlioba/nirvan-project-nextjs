@@ -6,7 +6,7 @@ export default function EditFooter({ slug }: { slug: string | undefined }) {
 	}
 
 	return (
-		<div className="flex items-center justify-between gap-1 border-t-2 border-dashed border-gray-300 pt-4 dark:border-gray-700">
+		<div className="flex items-center justify-between gap-1 border-t-2 border-dashed border-gray-300 pb-8 pt-4 dark:border-gray-700">
 			<Link
 				href={`/post/${slug}/edit`}
 				className="flex items-center gap-1 rounded-lg no-underline hover:text-fuchsia-700 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none"
