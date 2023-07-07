@@ -68,6 +68,13 @@ export default async function Page({ params }: Props) {
 				<MDXRemote source={data?.content as string} />
 				{session?.user.id === data.user_id && <EditFooter slug={data?.slug} />}
 			</div>
+			<div className="hidden">
+				<p className="text-right"></p>
+				<p className="underline"></p>
+				<p className="overline"></p>
+				<p className="line-through"></p>
+				<p className="indent-8"></p>
+			</div>
 		</main>
 	)
 }

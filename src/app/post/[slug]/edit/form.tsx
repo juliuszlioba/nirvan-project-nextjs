@@ -146,7 +146,7 @@ export default function EditPost({
 					rows={16}
 					value={content || undefined}
 					onChange={(event) => setContent(event.currentTarget.value)}
-					className="w-full rounded-t-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+					className="z-10 w-full rounded-t-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
 				></textarea>
 				<div className="rounded-b-lg border-t-2 border-dashed border-gray-200 bg-gray-100 p-4 dark:border-gray-700 dark:bg-gray-800">
 					<h2 className="text-lg">Help:</h2>
@@ -288,7 +288,7 @@ export default function EditPost({
 								leaveFrom="opacity-100 scale-100"
 								leaveTo="opacity-0 scale-95"
 							>
-								<Dialog.Panel className="dark:bg-gray-900 w-full max-w-md transform overflow-hidden rounded-lg bg-gray-100 p-6 text-left align-middle shadow-xl transition-all">
+								<Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-lg bg-gray-100 p-6 text-left align-middle shadow-xl transition-all dark:bg-gray-900">
 									<Dialog.Title
 										as="h3"
 										className="text-2xl font-medium leading-6 text-gray-900 dark:text-gray-200"

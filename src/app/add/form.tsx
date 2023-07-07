@@ -81,7 +81,7 @@ export default function AddPost() {
 					ref={contentRef}
 					placeholder="Content"
 					rows={16}
-					className="w-full rounded-t-lg bg-gray-100 px-4 py-2  focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+					className="z-10 w-full rounded-t-lg bg-gray-100 px-4 py-2  focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
 				></textarea>
 
 				<div className="rounded-b-lg border-t-2 border-dashed border-gray-200 bg-gray-100 p-4 dark:border-gray-700 dark:bg-gray-800">

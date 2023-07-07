@@ -21,7 +21,7 @@ export default async function Page() {
 
 	return (
 		<main
-			className={`mx-auto flex min-h-screen max-w-4xl flex-col items-center gap-4 p-4 py-8 md:p-8 xl:p-12 2xl:p-24`}
+			className={`mx-auto flex min-h-screen max-w-4xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
 		>
 			<h1 className="text-3xl">Login</h1>
 			<p>Please enter your credentials.</p>

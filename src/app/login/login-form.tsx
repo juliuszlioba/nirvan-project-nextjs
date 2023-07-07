@@ -31,11 +31,12 @@ export default function LoginForm() {
 			return setFormError(error.message)
 		}
 
-		return router.push(`/welcome`)
+		router.push(`/welcome`)
+		return router.refresh()
 	}
 
 	return (
-		<div className="w-full max-w-prose space-y-4">
+		<div className="w-full space-y-4">
 			{formError && (
 				<div className="flex items-center gap-1 text-red-500">
 					<svg

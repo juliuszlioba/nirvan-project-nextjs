@@ -10,17 +10,17 @@ export default function WelcomeMessage() {
 
 	if (error) {
 		return (
-			<div className="flex flex-col items-center gap-2">
+			<>
 				<p className="text-3xl">Oh no...</p>
 				<p className="text-xl">{error_description}</p>
-			</div>
+			</>
 		)
 	}
 
 	return (
-		<div className="flex flex-col items-center gap-2">
+		<>
 			<p className="text-3xl">Welcome back!</p>
 			<p className="text-xl">Now you can edit.</p>
-		</div>
+		</>
 	)
 }

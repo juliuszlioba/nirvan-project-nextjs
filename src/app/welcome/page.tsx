@@ -23,10 +23,12 @@ export default async function Page() {
 
 	return (
 		<main
-			className={`flex min-h-screen flex-col items-center gap-4 p-4 py-8 md:p-8 xl:p-12 2xl:p-24`}
+			className={`mx-auto flex min-h-screen max-w-4xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
 		>
-			<WelcomeMessage />
-			<div className="flex justify-center">
+			<div className="flex flex-col gap-2">
+				<WelcomeMessage />
+			</div>
+			<div className="flex">
 				<ContinueButton />
 			</div>
 		</main>
