@@ -4,6 +4,8 @@ import { NextResponse } from 'next/server'
 
 import type { Database } from '@/types/database.types'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: Request) {
 	const supabase = createServerComponentClient<Database>({ cookies })
 	const { data, count } = await supabase
