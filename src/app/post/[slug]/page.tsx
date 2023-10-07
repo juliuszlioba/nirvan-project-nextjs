@@ -63,9 +63,9 @@ export default async function Page({ params }: Props) {
 		<main
 			className={`${literata.className} flex min-h-screen flex-col items-center p-4 py-8 md:p-8 md:pt-12 xl:py-16 2xl:py-24`}
 		>
-			<div className="prose prose-slate w-full dark:prose-invert lg:prose-lg prose-h1:font-normal">
-				<h1 className="lg:mb-2">{data.title}</h1>
-				<p className="italic text-gray-500">by {data.author}</p>
+			<div className="prose prose-p:my-2 prose-slate w-full dark:prose-invert lg:prose-lg prose-h1:font-normal">
+				<h1 className="mb-2 lg:mb-1 text-center">{data.title}</h1>
+				<p className="italic text-gray-500 text-center">by {data.author}</p>
 				<MDXRemote source={data?.content as string} />
 				{session?.user.id === data.user_id && <EditFooter slug={data?.slug} />}
 				<ShareButtons />

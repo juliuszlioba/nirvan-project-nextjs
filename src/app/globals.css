@@ -41,3 +41,7 @@
     stroke-dashoffset: -124px;
   }
 }
+
+.prose {
+  max-width: 96ch;
+}

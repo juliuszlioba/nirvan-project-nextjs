@@ -8,6 +8,11 @@ export const revalidate = 0
 
 export default async function Home() {
 	const supabase = createServerComponentClient<Database>({ cookies })
+
+	const {
+		data: { session },
+	} = await supabase.auth.getSession()
+
 	const { data } = await supabase
 		.from('posts')
 		.select(`id, year, author, title, slug`)
@@ -46,7 +51,7 @@ export default async function Home() {
 				</p>
 			</div>
 
-			{data && (
+			{data && session && (
 				<div className="grid divide-y-2 divide-dashed divide-gray-300 dark:divide-gray-700">
 					{data?.map((item) => {
 						return (
