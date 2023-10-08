@@ -49,28 +49,28 @@ const ListItem = ({ item }: any) => {
 				</span>
 			</div>
 
-			<div className="ml-auto flex items-center gap-4">
+			<div className="ml-auto flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
 				<button
 					onClick={handleCopyClick}
-					className="flex items-center gap-2 text-lg hover:text-fuchsia-700"
+					className="flex items-center justify-end gap-2 whitespace-nowrap text-lg hover:text-fuchsia-700"
 				>
 					{isCopied ? (
 						<>
 							{/* prettier-ignore */}
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24" className="w-6 h-6"> <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.25} d="m8.667 12.833 2.5 2.5L15.333 9.5M22 12a10 10 0 1 1-20.001 0A10 10 0 0 1 22 12Z"/> </svg>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24" className="w-6 h-6 shrink-0"> <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.25} d="m8.667 12.833 2.5 2.5L15.333 9.5M22 12a10 10 0 1 1-20.001 0A10 10 0 0 1 22 12Z"/> </svg>
 							Copied!
 						</>
 					) : (
 						<>
 							{/* prettier-ignore */}
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" className="w-6 h-6"> <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.25} d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 1 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 1 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/> </svg>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" className="w-6 h-6 shrink-0"> <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.25} d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 1 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 1 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/> </svg>
 							Get Link
 						</>
 					)}
 				</button>
 				<Link
 					href={`/post/${item.slug}`}
-					className="flex items-center gap-2 text-lg hover:text-fuchsia-700"
+					className="flex items-center justify-end  gap-2 text-lg hover:text-fuchsia-700"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
