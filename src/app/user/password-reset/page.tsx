@@ -3,14 +3,10 @@ import type { Database } from '@/types/database.types'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-
-import AddPost from './form'
-
-// do not cache this page
-export const revalidate = 0
+import ResetForm from './reset-form'
 
 export const metadata: Metadata = {
-	title: 'Add new Story',
+	title: 'Change Password',
 }
 
 export default async function Page() {
@@ -28,7 +24,11 @@ export default async function Page() {
 		<main
 			className={`mx-auto flex min-h-screen max-w-4xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
 		>
-			<AddPost />
+			<h1 className="text-3xl">Change Password</h1>
+			<p>
+				Please enter your new credentials. <i>(at least 6 characters)</i>
+			</p>
+			<ResetForm />
 		</main>
 	)
 }

@@ -149,29 +149,29 @@ export default function EditPost({
 					className="z-10 w-full rounded-t-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
 				></textarea>
 				<div className="rounded-b-lg border-t-2 border-dashed border-gray-200 bg-gray-100 p-4 dark:border-gray-700 dark:bg-gray-800">
-					<h2 className="text-lg">Help:</h2>
-					<p>Formating of text is based on Markdown Syntax.</p>
-					<Link
-						href="https://www.markdownguide.org/cheat-sheet/#basic-syntax"
-						target="_blank"
-						className="flex items-center gap-1 hover:text-fuchsia-700"
-					>
-						Open Markdown cheat sheet{' '}
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							strokeWidth={1.5}
-							stroke="currentColor"
-							className="h-5 w-5"
+					<div className="flex items-center">
+						<Link
+							href="/docs/post-formating"
+							target="_blank"
+							className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-700 dark:hover:border-fuchsia-700"
 						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-							/>
-						</svg>
-					</Link>
+							Open post formating help
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								strokeWidth={1.5}
+								stroke="currentColor"
+								className="w-6 h-6"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
+								/>
+							</svg>
+						</Link>
+					</div>
 				</div>
 			</div>
 			{formError && (

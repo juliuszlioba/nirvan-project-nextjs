@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+
 import './globals.css'
 import { PT_Sans } from 'next/font/google'
 import { getCurrentScheme } from '@/utils/colorScheme'
@@ -8,9 +10,14 @@ const pt_sans = PT_Sans({
 	weight: ['400', '700'],
 })
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'Short stories',
 	description: 'Collection of short stories',
+	robots: {
+		index: false,
+		follow: false,
+		nocache: true,
+	},
 }
 
 // Prevent default cache method, overwise error during build

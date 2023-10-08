@@ -1,10 +1,11 @@
+import type { Metadata } from 'next'
 import type { Database } from '@/types/database.types'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import LoginForm from './login-form'
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'Login',
 }
 

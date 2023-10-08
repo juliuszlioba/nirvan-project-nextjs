@@ -1,0 +1,282 @@
+import type { Metadata } from 'next'
+import { Literata } from 'next/font/google'
+
+const literata = Literata({
+	subsets: ['latin'],
+	display: 'swap',
+})
+
+export const metadata: Metadata = {
+	title: 'Post formating',
+}
+
+const preseClass = `${literata.className} prose prose-headings:text-center prose-p:my-1 prose-p:indent-8 prose-slate w-full dark:prose-invert lg:prose-lg prose-h1:font-normal`
+
+export default async function Page() {
+	return (
+		<main
+			className={`mx-auto flex min-h-screen max-w-4xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
+		>
+			<h1 className="text-3xl">Post formating rules</h1>
+
+			<p>Formating of text is based on Markdown Syntax. Here are examples:</p>
+
+			<div className="space-y-24 md:space-y-8 pt-12">
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
+							<p>
+								<span className="text-fuchsia-700">#</span> Heading 1
+							</p>
+							<p>
+								<span className="text-fuchsia-700">##</span> Heading 2
+							</p>
+							<p>
+								<span className="text-fuchsia-700">###</span> Heading 3
+							</p>
+							<p>
+								<span className="text-fuchsia-700">####</span> Heading 4
+							</p>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						<h1>Heading 1</h1>
+						<h2>Heading 2</h2>
+						<h3>Heading 3</h3>
+						<h4>Heading 4</h4>
+					</div>
+				</div>
+
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
+							<p>
+								Paragraph. Lorem, ipsum dolor sit amet consectetur adipisicing
+								elit. Reiciendis quis quos velit esse cumque laborum, enim
+								aliquid omnis aliquam dolore facere exercitationem obcaecati
+								optio natus illum ipsam ratione impedit? Earum?
+							</p>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						<p>
+							Paragraph. Lorem, ipsum dolor sit amet consectetur adipisicing
+							elit. Reiciendis quis quos velit esse cumque laborum, enim aliquid
+							omnis aliquam dolore facere exercitationem obcaecati optio natus
+							illum ipsam ratione impedit? Earum?
+						</p>
+					</div>
+				</div>
+
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
+							<p>
+								<span className="text-fuchsia-700">**</span>bold text
+								<span className="text-fuchsia-700">**</span>
+							</p>
+							<p>
+								<span className="text-fuchsia-700">*</span>italicized text
+								<span className="text-fuchsia-700">*</span>
+							</p>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						<p>
+							<strong>bold text</strong>
+						</p>
+						<p>
+							<em>italicized text</em>
+						</p>
+					</div>
+				</div>
+
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
+							<p>
+								<span className="text-fuchsia-700">&gt;</span> blockquote
+							</p>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						<blockquote>
+							<p>blockquote</p>
+						</blockquote>
+					</div>
+				</div>
+
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
+							<p>
+								<span className="text-fuchsia-700">1.</span> First item
+								<br />
+								<span className="text-fuchsia-700">2.</span> Second item
+								<br />
+								<span className="text-fuchsia-700">3.</span> Third item
+							</p>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						<ol>
+							<li>First item</li>
+							<li>Second item</li>
+							<li>Third item</li>
+						</ol>
+					</div>
+				</div>
+
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
+							<p>
+								<span className="text-fuchsia-700">-</span> First item
+								<br />
+								<span className="text-fuchsia-700">-</span> Second item
+								<br />
+								<span className="text-fuchsia-700">-</span> Third item
+							</p>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						<ul>
+							<li>First item</li>
+							<li>Second item</li>
+							<li>Third item</li>
+						</ul>
+					</div>
+				</div>
+
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
+							<p>
+								<span className="text-fuchsia-700">`</span>code
+								<span className="text-fuchsia-700">`</span>
+							</p>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						<p>
+							<code>code something</code>
+						</p>
+					</div>
+				</div>
+
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
+							<p className="text-fuchsia-700">
+								[title](https://www.example.com)
+							</p>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						<p>
+							<a href="https://www.google.com">Link</a>
+						</p>
+					</div>
+				</div>
+
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
+							<p className="text-fuchsia-700">---</p>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						<hr />
+					</div>
+				</div>
+
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
+							<p className="text-fuchsia-700">![alt text](image.jpg)</p>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						{/* eslint-disable-next-line @next/next/no-img-element */}
+						<img
+							src="https://images.unsplash.com/photo-1521946066376-4a1493ee78df?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1171&amp;q=80"
+							alt="Library"
+							title="Library"
+						></img>
+					</div>
+				</div>
+			</div>
+
+			<h1 className="text-3xl pt-12">Advanced post formating rules</h1>
+			<p>
+				These rules are not Markdown Syntax. Can be added more rules by request
+				to website admin.
+			</p>
+
+			<div className="space-y-24 md:space-y-8 pt-12">
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p className=&quot;text-right&quot;&gt;
+								</span>
+								Centered text
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p className=&quot;text-right&quot;&gt;
+								</span>
+								Right aligned text
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p className=&quot;underline&quot;&gt;
+								</span>
+								underline
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p className=&quot;overline&quot;&gt;
+								</span>
+								overline
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p className=&quot;line-through&quot;&gt;
+								</span>
+								line-through<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						<p className="text-center">Centered text</p>
+						<p className="text-right">Right aligned text</p>
+						<p className="underline">underline</p>
+						<p className="overline">overline</p>
+						<p className="line-through">line-through</p>
+					</div>
+				</div>
+			</div>
+		</main>
+	)
+}

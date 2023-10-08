@@ -1,3 +1,4 @@
+import ListItem from '@/components/list-item'
 import type { Database } from '@/types/database.types'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
@@ -42,54 +43,21 @@ export default async function Home() {
 						<path d="M4 4v16" />
 					</svg>
 
-					<p className="text-3xl">short stories</p>
+					{/* <p className="text-3xl">short stories</p> */}
+					<p className="text-3xl">SFFBC</p>
 				</div>
 				<p className=" tracking-wide">
-					Welcome to my website, where you&apos;ll find an exhilarating
-					collection of short stories that will transport you to new dimensions,
-					challenge your perceptions, and leave you craving more.
+					Welcome to the Science Fiction & Fantasy Book Club, where you&apos;ll
+					find an exhilarating collection of short stories that will transport
+					you to new dimensions, challenge your perceptions, and leave you
+					craving more.
 				</p>
 			</div>
 
 			{data && session && (
 				<div className="grid divide-y-2 divide-dashed divide-gray-300 dark:divide-gray-700">
-					{data?.map((item) => {
-						return (
-							<div key={item.id} className="flex items-center gap-2 py-4">
-								<div className="grid">
-									<Link
-										href={`/post/${item.slug}`}
-										className="text-2xl hover:text-fuchsia-700"
-									>
-										{item.title}
-									</Link>
-									<span>
-										by {item.author}, published {item.year}
-									</span>
-								</div>
-
-								<Link
-									href={`/post/${item.slug}`}
-									className="ml-auto flex items-center gap-2 text-lg hover:text-fuchsia-700"
-								>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										strokeWidth={1.5}
-										stroke="currentColor"
-										className="h-6 w-6"
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
-										/>
-									</svg>
-									Read
-								</Link>
-							</div>
-						)
+					{data?.map((item, index) => {
+						return <ListItem key={index} item={item} />
 					})}
 				</div>
 			)}
