@@ -67,7 +67,7 @@ export default async function Page({ params }: Props) {
 				<h1 className="text-center text-2xl lg:text-4xl pb-3">{data.title}</h1>
 				<p className="italic text-gray-500 text-center">by {data.author}</p>
 			</div>
-			<div className="prose prose-headings:text-center prose-p:my-1 prose-p:indent-8 prose-slate w-full dark:prose-invert lg:prose-lg prose-h1:font-normal">
+			<div className="prose prose-headings:text-center prose-p:my-1 prose-p:indent-8 prose-slate w-full dark:prose-invert lg:prose-lg prose-h1:font-normal prose-img:mx-auto">
 				<MDXRemote source={data?.content as string} />
 				{session?.user.id === data.user_id && <EditFooter slug={data?.slug} />}
 				<ShareButtons />
@@ -77,7 +77,7 @@ export default async function Page({ params }: Props) {
 				<p className="underline"></p>
 				<p className="overline"></p>
 				<p className="line-through"></p>
-				<p className="indent-8"></p>
+				<p className="divider"></p>
 			</div>
 		</main>
 	)

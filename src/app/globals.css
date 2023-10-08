@@ -45,3 +45,7 @@
 .prose {
   max-width: 96ch;
 }
+
+.prose .divider {
+  height: 1.5rem;
+}

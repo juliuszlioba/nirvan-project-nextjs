@@ -227,6 +227,43 @@ export default async function Page() {
 				<div className="grid md:grid-cols-2 gap-8">
 					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
 						<div className="space-y-4">
+							<div>To add more space between Paragraph 1 and Paragraph 2.</div>
+							<div>
+								Paragraph 1. Lorem, ipsum dolor sit amet consectetur adipisicing
+								elit. Reiciendis quis quos velit esse cumque laborum.
+							</div>
+							<div>
+								<span className="text-fuchsia-700">
+									&lt;p className=&quot;divider&quot;&gt;
+								</span>
+							</div>
+							<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							<div>
+								Paragraph 2. Enim aliquid omnis aliquam dolore facere
+								exercitationem obcaecati optio natus illum ipsam ratione
+								impedit? Earum?
+							</div>
+						</div>
+					</div>
+
+					<div className={preseClass}>
+						<p>To add more space between Paragraph 1 and Paragraph 2.</p>
+						<p>
+							Paragraph 1. Lorem, ipsum dolor sit amet consectetur adipisicing
+							elit. Reiciendis quis quos velit esse cumque laborum.
+						</p>
+						<p className="divider"></p>
+						<p>
+							Paragraph 2. Enim aliquid omnis aliquam dolore facere
+							exercitationem obcaecati optio natus illum ipsam ratione impedit?
+							Earum?
+						</p>
+					</div>
+				</div>
+
+				<div className="grid md:grid-cols-2 gap-8">
+					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">
 									&lt;p className=&quot;text-right&quot;&gt;
