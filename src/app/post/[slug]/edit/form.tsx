@@ -149,7 +149,7 @@ export default function EditPost({
 					className="z-10 w-full rounded-t-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
 				></textarea>
 				<div className="rounded-b-lg border-t-2 border-dashed border-gray-200 bg-gray-100 p-4 dark:border-gray-700 dark:bg-gray-800">
-					<div className="flex items-center">
+					<div className="flex items-center gap-2">
 						<Link
 							href="/docs/post-formating"
 							target="_blank"
@@ -169,6 +169,30 @@ export default function EditPost({
 									strokeLinejoin="round"
 									d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
 								/>
+							</svg>
+						</Link>
+						<Link
+							href="https://word2md.com/"
+							target="_blank"
+							rel="nofollow noopener noreferrer"
+							className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-700 dark:hover:border-fuchsia-700"
+						>
+							.docx to .md converter
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								className="w-5 h-5"
+							>
+								<path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z" />
+								<path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8" />
+								<path d="M15 2v5h5" />
 							</svg>
 						</Link>
 					</div>

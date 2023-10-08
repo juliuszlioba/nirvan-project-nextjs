@@ -4,12 +4,16 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
+import getConfig from 'next/config'
 
 export const metadata: Metadata = {
 	title: 'Change Password',
 }
 
 export default async function Page() {
+	const { publicRuntimeConfig } = getConfig()
+	const version = publicRuntimeConfig?.version
+
 	const supabase = createServerComponentClient<Database>({ cookies })
 
 	const {
@@ -33,6 +37,9 @@ export default async function Page() {
 				>
 					Change Password
 				</Link>
+			</div>
+			<div className="mt-auto text-gray-400 dark:text-gray-700">
+				Website Version: {version}
 			</div>
 		</main>
 	)
