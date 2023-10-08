@@ -14,9 +14,8 @@ export const metadata: Metadata = {
 	title: 'Short stories',
 	description: 'Collection of short stories',
 	robots: {
-		index: false,
-		follow: false,
-		nocache: true,
+		index: true,
+		follow: true,
 	},
 }
 
