@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { PT_Sans } from 'next/font/google'
 import { getCurrentScheme } from '@/utils/colorScheme'
-import { Footer } from './footer'
+import { Header } from './Header'
 
 const pt_sans = PT_Sans({
 	subsets: ['latin'],
@@ -34,8 +34,8 @@ export default async function RootLayout({
 			<body
 				className={`${pt_sans.className} bg-gray-200 dark:bg-gray-900 dark:text-gray-200`}
 			>
+				<Header />
 				{children}
-				<Footer />
 			</body>
 		</html>
 	)

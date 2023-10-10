@@ -6,15 +6,15 @@ import Link from 'next/link'
 import ColorSchemeToggleButton from './color-scheme-toggle-button'
 import Login from './login'
 
-export async function Footer() {
+export async function Header() {
 	const supabase = createServerComponentClient<Database>({ cookies })
 	const {
 		data: { session },
 	} = await supabase.auth.getSession()
 
 	return (
-		<div className="mx-auto max-w-4xl px-4 py-4 md:pb-8 xl:pb-12 2xl:pb-24">
-			<div className="flex w-full flex-wrap items-center justify-between gap-4 rounded-2xl border-2 border-dashed border-gray-300 px-4 py-4 dark:border-gray-800">
+		<div className="mx-auto max-w-5xl px-4 pb-4 md:pb-8 xl:pb-12 2xl:pb-24">
+			<div className="flex w-full flex-wrap items-center justify-between gap-4  border-b-2 border-dashed border-gray-300 px-3 py-3 dark:border-gray-800">
 				<div className="flex items-center gap-2">
 					{session && (
 						<Link
