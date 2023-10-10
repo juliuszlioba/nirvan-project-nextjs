@@ -3,10 +3,11 @@
 import { Fragment, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import slugify from '@/utils/slugify'
-import { toInt } from 'radash'
 import { Dialog, Transition } from '@headlessui/react'
+import slugify from '@/lib/slugify'
+import { toInt } from 'radash'
 import Link from 'next/link'
+import { Trash2, Save, HelpCircle, Files } from 'lucide-react'
 
 export default function EditPost({
 	post,
@@ -118,8 +119,9 @@ export default function EditPost({
 				placeholder="Title"
 				value={title || undefined}
 				onChange={(event) => setTitle(event.currentTarget.value)}
-				className="w-full rounded-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+				className="input w-full"
 			/>
+
 			<div className="flex flex-col gap-4 md:flex-row">
 				<input
 					type="text"
@@ -127,7 +129,7 @@ export default function EditPost({
 					placeholder="Author"
 					value={author || undefined}
 					onChange={(event) => setAuthor(event.currentTarget.value)}
-					className="w-full rounded-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+					className="input w-full"
 				/>
 				<input
 					type="text"
@@ -136,66 +138,33 @@ export default function EditPost({
 					value={year}
 					maxLength={4}
 					onChange={(event) => handleYearSet(event.currentTarget.value)}
-					className="w-full rounded-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800 md:w-1/3"
+					className="input w-full md:w-1/3"
 				/>
 			</div>
 
-			<div className="flex flex-col">
+			<div className="flex flex-col gap-4">
 				<textarea
 					placeholder="Content"
 					rows={16}
 					value={content || undefined}
 					onChange={(event) => setContent(event.currentTarget.value)}
-					className="z-10 w-full rounded-t-lg bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+					className="input z-10 w-full"
 				></textarea>
-				<div className="rounded-b-lg border-t-2 border-dashed border-gray-200 bg-gray-100 p-4 dark:border-gray-700 dark:bg-gray-800">
-					<div className="flex items-center gap-2">
-						<Link
-							href="/docs/post-formating"
-							target="_blank"
-							className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-700 dark:hover:border-fuchsia-700"
-						>
-							Open post formating help
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								strokeWidth={1.5}
-								stroke="currentColor"
-								className="w-6 h-6"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
-								/>
-							</svg>
-						</Link>
-						<Link
-							href="https://word2md.com/"
-							target="_blank"
-							rel="nofollow noopener noreferrer"
-							className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-700 dark:hover:border-fuchsia-700"
-						>
-							.docx to .md converter
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								className="w-5 h-5"
-							>
-								<path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z" />
-								<path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8" />
-								<path d="M15 2v5h5" />
-							</svg>
-						</Link>
-					</div>
+
+				<div className="flex items-center gap-2">
+					<Link href="/docs/post-formating" target="_blank" className="button">
+						Open post formating help
+						<HelpCircle strokeWidth={1.5} />
+					</Link>
+					<Link
+						href="https://word2md.com/"
+						target="_blank"
+						rel="nofollow noopener noreferrer"
+						className="button"
+					>
+						.docx to .md converter
+						<Files strokeWidth={1.5} />
+					</Link>
 				</div>
 			</div>
 			{formError && (
@@ -238,52 +207,14 @@ export default function EditPost({
 			)}
 
 			<div className="flex items-center justify-between gap-2">
-				<button
-					onClick={handleSubmit}
-					className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700"
-				>
+				<button onClick={handleSubmit} className="button">
 					Save
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth={1.5}
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						className="text-gray-800 dark:text-gray-200"
-					>
-						<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
-						<polyline points="17 21 17 13 7 13 7 21" />
-						<polyline points="7 3 7 8 15 8" />
-					</svg>
+					<Save strokeWidth={1.5} />
 				</button>
 
-				<button
-					onClick={openModal}
-					className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 text-red-700 hover:border-red-600 hover:text-red-600 dark:border-gray-800 dark:hover:border-red-600"
-				>
+				<button onClick={openModal} className="button text-red-700">
 					Delete
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth={1.5}
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						className="lucide lucide-trash-2"
-					>
-						<path d="M3 6h18" />
-						<path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
-						<path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
-						<line x1="10" x2="10" y1="11" y2="17" />
-						<line x1="14" x2="14" y1="11" y2="17" />
-					</svg>
+					<Trash2 strokeWidth={1.5} />
 				</button>
 			</div>
 
@@ -329,18 +260,17 @@ export default function EditPost({
 									<div className="mt-4 flex gap-2">
 										<button
 											type="button"
-											className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 text-red-700 hover:border-red-600 hover:text-red-600 dark:border-gray-800 dark:hover:border-red-600"
-											onClick={handleDelete}
-										>
-											Confirm
-										</button>
-
-										<button
-											type="button"
-											className="flex items-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700"
+											className="button"
 											onClick={closeModal}
 										>
 											Cancel
+										</button>
+										<button
+											type="button"
+											className="button text-red-600 hover:border-red-600 hover:text-red-600 dark:border-red-800 dark:hover:border-red-600"
+											onClick={handleDelete}
+										>
+											Confirm
 										</button>
 									</div>
 								</Dialog.Panel>

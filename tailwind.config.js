@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
 const colors = require("tailwindcss/colors");
+const forms = require('@tailwindcss/forms');
+const typography = require('@tailwindcss/typography');
 
 module.exports = {
 	content: [
@@ -16,8 +18,8 @@ module.exports = {
 			white: '#ffffff',
 			gray: colors.neutral,
 			fuchsia: colors.fuchsia,
-      red: colors.red,
-      blue: colors.blue
+			red: colors.red,
+			blue: colors.blue,
 		},
 
 		extend: {
@@ -28,5 +30,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require('@tailwindcss/typography')],
+	plugins: [typography, forms],
 }

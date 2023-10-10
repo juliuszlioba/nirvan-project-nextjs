@@ -15,15 +15,15 @@ const preseClass = `${literata.className} prose prose-headings:text-center prose
 export default async function Page() {
 	return (
 		<main
-			className={`mx-auto flex min-h-screen max-w-4xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
+			className={`mx-auto flex min-h-screen max-w-5xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
 		>
 			<h1 className="text-3xl">Post formating rules</h1>
 
 			<p>Formating of text is based on Markdown Syntax. Here are examples:</p>
 
-			<div className="space-y-24 md:space-y-8 pt-12">
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+			<div className="space-y-24 pt-12 md:space-y-8">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">#</span> Heading 1
@@ -48,8 +48,8 @@ export default async function Page() {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								Paragraph. Lorem, ipsum dolor sit amet consectetur adipisicing
@@ -70,8 +70,8 @@ export default async function Page() {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">**</span>bold text
@@ -94,8 +94,8 @@ export default async function Page() {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">&gt;</span> blockquote
@@ -110,8 +110,8 @@ export default async function Page() {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">1.</span> First item
@@ -132,8 +132,8 @@ export default async function Page() {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">-</span> First item
@@ -154,8 +154,8 @@ export default async function Page() {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">`</span>code
@@ -171,8 +171,8 @@ export default async function Page() {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p className="text-fuchsia-700">
 								[title](https://www.example.com)
@@ -187,8 +187,8 @@ export default async function Page() {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p className="text-fuchsia-700">---</p>
 						</div>
@@ -199,8 +199,8 @@ export default async function Page() {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p className="text-fuchsia-700">![alt text](image.jpg)</p>
 						</div>
@@ -217,15 +217,15 @@ export default async function Page() {
 				</div>
 			</div>
 
-			<h1 className="text-3xl pt-12">Advanced post formating rules</h1>
+			<h1 className="pt-12 text-3xl">Advanced post formating rules</h1>
 			<p>
 				These rules are not Markdown Syntax. Can be added more rules by request
 				to website admin.
 			</p>
 
-			<div className="space-y-24 md:space-y-8 pt-12">
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+			<div className="space-y-24 pt-12 md:space-y-8">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<div>To add more space between Paragraph 1 and Paragraph 2.</div>
 							<div>
@@ -261,8 +261,8 @@ export default async function Page() {
 					</div>
 				</div>
 
-				<div className="grid md:grid-cols-2 gap-8">
-					<div className="border-b-2 md:border-r-2 md:border-b-0 border-dashed border-gray-400 dark:border-gray-700 pr-4 pb-4">
+				<div className="grid gap-8 md:grid-cols-2">
+					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">

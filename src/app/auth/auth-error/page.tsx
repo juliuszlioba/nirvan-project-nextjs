@@ -1,17 +1,12 @@
-import type { Metadata } from 'next'
-import type { Database } from '@/types/database.types'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import SignIn from '@/components/Auth/SignIn'
 
-export const metadata: Metadata = {
-	title: 'Login',
-}
+import type { Database } from '@/lib/database.types'
 
-export default async function Page() {
+export default async function SignUpPage() {
 	const supabase = createServerComponentClient<Database>({ cookies })
-
 	const {
 		data: { session },
 	} = await supabase.auth.getSession()
@@ -24,7 +19,12 @@ export default async function Page() {
 		<main
 			className={`mx-auto flex min-h-screen max-w-5xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
 		>
-			<SignIn />
+			<h2 className="text-3xl">Authentication error</h2>
+			<div>
+				<Link className="button" href="/">
+					Go Home
+				</Link>
+			</div>
 		</main>
 	)
 }

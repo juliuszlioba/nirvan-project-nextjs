@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 
-import './globals.css'
-import { PT_Sans } from 'next/font/google'
-import { getCurrentScheme } from '@/utils/colorScheme'
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { cookies } from 'next/headers'
+import AuthProvider from '@/components/AuthProvider'
+import { getCurrentTheme } from '@/lib/colorTheme'
 import { Header } from './Header'
+import { PT_Sans } from 'next/font/google'
+import '../styles/globals.css'
 
 const pt_sans = PT_Sans({
 	subsets: ['latin'],
@@ -11,11 +14,11 @@ const pt_sans = PT_Sans({
 })
 
 export const metadata: Metadata = {
-	title: 'Short stories',
+	title: 'SFFBC',
 	description: 'Collection of short stories',
 	robots: {
 		index: true,
-		follow: true,
+		follow: false,
 	},
 }
 
@@ -27,15 +30,22 @@ export default async function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	const scheme = await getCurrentScheme()
+	const supabase = createServerComponentClient({ cookies })
+
+	const {
+		data: { session },
+	} = await supabase.auth.getSession()
+
+	const accessToken = session?.access_token || null
+	const scheme = await getCurrentTheme()
 
 	return (
 		<html lang="en" className={scheme === 'dark' ? 'dark' : ''}>
-			<body
-				className={`${pt_sans.className} bg-gray-200 dark:bg-gray-900 dark:text-gray-200`}
-			>
-				<Header />
-				{children}
+			<body className={`${pt_sans.className}`}>
+				<AuthProvider accessToken={accessToken}>
+					<Header />
+					{children}
+				</AuthProvider>
 			</body>
 		</html>
 	)

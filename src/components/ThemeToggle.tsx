@@ -1,13 +1,13 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { toggleScheme } from '@/utils/colorScheme'
+import { toggleTheme } from '@/lib/colorTheme'
 
-export default function ColorSchemeToggleButton() {
+export default function ThemeToggle() {
 	const router = useRouter()
 
 	const toggle = async () => {
-		await toggleScheme()
+		await toggleTheme()
 		router.refresh()
 	}
 
