@@ -1,4 +1,4 @@
-export default function Loader() {
+export default function LoaderSpinner() {
 	return (
 		<div className="mx-auto p-2 text-gray-800 dark:text-gray-200">
 			<svg
