@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 	title: 'Post formating',
 }
 
-const preseClass = `${literata.className} prose prose-headings:text-center prose-p:my-1 prose-p:indent-8 prose-slate w-full dark:prose-invert lg:prose-lg prose-h1:font-normal`
+const preseClass = `${literata.className} bg-background text-content prose-headings:text-content prose-ol:text-content prose-strong:text-content prose-blockquote:text-content prose-code:text-content prose-a:text-content prose w-full lg:prose-lg prose-headings:text-center prose-h1:font-normal prose-p:my-1 prose-p:indent-8 prose-img:mx-auto prose-img:mix-blend-multiply dark:prose-img:mix-blend-normal`
 
 export default async function Page() {
 	return (
@@ -23,7 +23,7 @@ export default async function Page() {
 
 			<div className="space-y-24 pt-12 md:space-y-8">
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">#</span> Heading 1
@@ -49,7 +49,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								Paragraph. Lorem, ipsum dolor sit amet consectetur adipisicing
@@ -71,7 +71,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">**</span>bold text
@@ -95,7 +95,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">&gt;</span> blockquote
@@ -111,7 +111,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">1.</span> First item
@@ -133,7 +133,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">-</span> First item
@@ -155,7 +155,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">`</span>code
@@ -172,7 +172,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p className="text-fuchsia-700">
 								[title](https://www.example.com)
@@ -188,7 +188,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p className="text-fuchsia-700">---</p>
 						</div>
@@ -200,7 +200,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p className="text-fuchsia-700">![alt text](image.jpg)</p>
 						</div>
@@ -225,7 +225,7 @@ export default async function Page() {
 
 			<div className="space-y-24 pt-12 md:space-y-8">
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<div>To add more space between Paragraph 1 and Paragraph 2.</div>
 							<div>
@@ -262,7 +262,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-b-2 border-dashed border-gray-400 pb-4 pr-4 dark:border-gray-700 md:border-b-0 md:border-r-2">
+					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">

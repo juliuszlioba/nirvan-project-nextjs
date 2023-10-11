@@ -3,30 +3,74 @@
 @tailwind utilities;
 
 @layer base {
+	:root {
+		--color-background: 231 229 228;
+		--color-content: 23 23 23;
+		--color-gray: 212 212 212;
+		--color-gray-light: 234 234 234;
+		--color-accent-1: 162 28 175;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--color-background: 23 23 23;
+			--color-content: 231 229 228;
+			--color-gray: 41 37 36;
+			--color-gray-light: 42 42 42;
+			--color-accent-1: 162 28 175;
+		}
+	}
+
+	:root[data-theme='light'] {
+		--color-background: 231 229 228;
+		--color-content: 23 23 23;
+		--color-gray: 212 212 212;
+		--color-gray-light: 234 234 234;
+		--color-accent-1: 162 28 175;
+	}
+
+	:root[data-theme='dark'] {
+		--color-background: 23 23 23;
+		--color-content: 231 229 228;
+		--color-gray: 41 37 36;
+		--color-gray-light: 42 42 42;
+		--color-accent-1: 162 28 175;
+	}
+
 	body {
-		@apply min-h-screen bg-gray-100 dark:bg-gray-900 dark:text-gray-200;
+		@apply bg-background text-content min-h-screen;
 	}
 	.custom-focus {
-		@apply focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-fuchsia-700 focus:ring-offset-0 dark:focus:border-gray-950;
+		@apply focus:border-gray focus:ring-accent-1 focus:outline-none focus:ring-2 focus:ring-offset-0;
 	}
 	.card {
 		@apply flex w-full flex-col gap-4;
 	}
 	.input {
-		@apply custom-focus rounded-2xl border-2 border-gray-300 dark:border-gray-950 dark:bg-gray-800 dark:active:bg-gray-800;
+		@apply custom-focus border-gray bg-gray-light rounded-2xl border-2;
 	}
 	.input-error {
 		@apply border-red-600 bg-red-100 dark:border-red-600 dark:bg-red-950;
 	}
 	.button {
-		@apply custom-focus inline-flex items-center gap-2 rounded-2xl border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700;
+		@apply custom-focus border-gray hover:border-accent-1 inline-flex items-center gap-2 rounded-2xl border-2 px-4 py-2;
 	}
 	.button-borderless {
-		@apply custom-focus inline-flex items-center gap-2 rounded-2xl border-2 border-transparent px-3 py-2 hover:border-fuchsia-700 dark:border-transparent dark:hover:border-fuchsia-700;
+		@apply custom-focus hover:border-accent-1 inline-flex items-center gap-2 rounded-2xl border-2 border-transparent px-3 py-2;
 	}
 	.link {
-		@apply custom-focus rounded-md hover:text-fuchsia-700;
+		@apply custom-focus hover:text-accent-1 rounded-md;
 	}
+}
+
+/* for light theme active switch */
+:root[data-theme='light'] .theme-light {
+	@apply text-content;
+}
+
+/* for dark theme active switch */
+:root[data-theme='dark'] .theme-dark {
+	@apply text-content;
 }
 
 .ringIco {

@@ -40,7 +40,7 @@ export default async function RootLayout({
 	const scheme = await getCurrentTheme()
 
 	return (
-		<html lang="en" className={scheme === 'dark' ? 'dark' : ''}>
+		<html lang="en" data-theme={scheme === 'dark' ? 'dark' : 'light'}>
 			<body className={`${pt_sans.className}`}>
 				<AuthProvider accessToken={accessToken}>
 					<Header />

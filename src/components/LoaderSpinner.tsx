@@ -1,6 +1,6 @@
 export default function LoaderSpinner() {
 	return (
-		<div className="mx-auto p-2 text-gray-800 dark:text-gray-200">
+		<div className="text-gray mx-auto p-2">
 			<svg
 				className="ringIco"
 				viewBox="25 25 50 50"

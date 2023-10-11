@@ -44,7 +44,7 @@ export default async function Page() {
 					Change Password
 				</Link>
 			</div>
-			<div className="mt-16 border-t-2 border-dashed border-gray-300 py-2 text-gray-300 dark:border-gray-800 dark:text-gray-800">
+			<div className="border-gray text-gray mt-16 border-t-2 border-dashed py-2">
 				Website Version: {version}
 			</div>
 		</main>

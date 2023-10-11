@@ -29,12 +29,12 @@ export default async function Home() {
 		<main
 			className={`mx-auto flex max-w-5xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
 		>
-			<div className="pb-4 dark:border-gray-800">
+			<div className="border-gray pb-4">
 				<div className="flex items-center gap-2 pb-2">
 					<Library strokeWidth={1.5} className="h-10 w-10" />
 					<p className="text-3xl">SFFBC</p>
 				</div>
-				<p className=" tracking-wide">
+				<p className="tracking-wide">
 					Welcome to the Science Fiction & Fantasy Book Club, where you&apos;ll
 					find an exhilarating collection of short stories that will transport
 					you to new dimensions, challenge your perceptions, and leave you
@@ -43,7 +43,7 @@ export default async function Home() {
 			</div>
 
 			{session && user?.permission !== 'SUBSCRIBER' && data && (
-				<div className="grid divide-y-2 divide-dashed divide-gray-300 dark:divide-gray-700">
+				<div className="divide-gray grid divide-y-2 divide-dashed">
 					{data?.map((item, index) => {
 						return <ListItem key={index} item={item} />
 					})}

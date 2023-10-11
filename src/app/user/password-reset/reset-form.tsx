@@ -63,18 +63,18 @@ export default function LoginForm() {
 					type="password"
 					name="newpassword"
 					placeholder="new password"
-					className="w-full rounded-2xl bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+					className="bg-gray focus:ring-accent-1 w-full rounded-2xl px-4 py-2 focus:ring-2 focus-visible:outline-none"
 				/>
 				<input
 					ref={passwordRef}
 					type="password"
 					name="newpasswordrepeat"
 					placeholder="new password repeat"
-					className="w-full rounded-2xl bg-gray-100 px-4 py-2 focus:ring-2 focus:ring-fuchsia-700 focus-visible:outline-none dark:bg-gray-800"
+					className="bg-gray focus:ring-accent-1 w-full rounded-2xl px-4 py-2 focus:ring-2 focus-visible:outline-none"
 				/>
 				<button
 					onClick={handlePassChange}
-					className="flex items-center gap-2 rounded-2xl border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700"
+					className="border-gray hover:border-accent-1 flex items-center gap-2 rounded-2xl border-2 px-4 py-2"
 				>
 					Login
 				</button>

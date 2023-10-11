@@ -229,7 +229,7 @@ export default function EditPost({
 						leaveFrom="opacity-100"
 						leaveTo="opacity-0"
 					>
-						<div className="fixed inset-0 bg-gray-200 bg-opacity-50 backdrop-blur-sm dark:bg-gray-900 dark:bg-opacity-50" />
+						<div className="bg-gray fixed inset-0 bg-opacity-50 backdrop-blur-sm" />
 					</Transition.Child>
 
 					<div className="fixed inset-0 overflow-y-auto">
@@ -243,10 +243,10 @@ export default function EditPost({
 								leaveFrom="opacity-100 scale-100"
 								leaveTo="opacity-0 scale-95"
 							>
-								<Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-lg bg-gray-100 p-6 text-left align-middle shadow-xl transition-all dark:bg-gray-900">
+								<Dialog.Panel className="bg-gray w-full max-w-md transform overflow-hidden rounded-lg p-6 text-left align-middle shadow-xl transition-all">
 									<Dialog.Title
 										as="h3"
-										className="text-2xl font-medium leading-6 text-gray-900 dark:text-gray-200"
+										className="text-gray text-2xl font-medium leading-6"
 									>
 										Are you sure?
 									</Dialog.Title>

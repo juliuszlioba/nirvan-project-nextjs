@@ -10,7 +10,7 @@ export default function NotFound() {
 			<div>
 				<Link
 					href="/"
-					className="inline-flex items-center gap-2 rounded-2xl border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700"
+					className="border-gray hover:border-accent-1 inline-flex items-center gap-2 rounded-2xl border-2 px-4 py-2"
 				>
 					Return Home
 				</Link>

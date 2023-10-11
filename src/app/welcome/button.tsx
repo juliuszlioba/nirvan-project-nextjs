@@ -14,7 +14,7 @@ export function ContinueButton() {
 		<>
 			<button
 				onClick={() => handleNextStep()}
-				className="rounded-2xl border-2 border-gray-300 px-4 py-2 hover:border-fuchsia-700 dark:border-gray-800 dark:hover:border-fuchsia-700"
+				className="border-gray hover:border-accent-1 rounded-2xl border-2 px-4 py-2"
 			>
 				Continue
 			</button>

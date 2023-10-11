@@ -10,16 +10,20 @@ module.exports = {
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
-	darkMode: 'class',
+	//darkMode: 'class',
 	theme: {
 		colors: {
+			background: 'rgb(var(--color-background) / <alpha-value>)',
+			content: 'rgb(var(--color-content) / <alpha-value>)',
+			accent: {
+				1: 'rgb(var(--color-accent-1) / <alpha-value>)',
+			},
 			transparent: 'transparent',
 			current: 'currentColor',
 			white: '#ffffff',
-			gray: colors.stone,
-			fuchsia: colors.fuchsia,
+			gray: 'rgb(var(--color-gray) / <alpha-value>)',
+			"gray-light": 'rgb(var(--color-gray-light) / <alpha-value>)',
 			red: colors.red,
-			blue: colors.blue,
 		},
 
 		extend: {
