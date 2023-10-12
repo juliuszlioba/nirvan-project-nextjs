@@ -67,7 +67,7 @@ export default async function Page({ params }: Props) {
 				<h1 className="pb-3 text-center text-2xl lg:text-4xl">{data.title}</h1>
 				<p className="text-center italic">by {data.author}</p>
 			</div>
-			<div className="bg-background text-content prose-headings:text-content prose-ol:text-content prose-strong:text-content prose-blockquote:text-content prose-code:text-content prose-a:text-content prose w-full lg:prose-lg prose-headings:text-center prose-h1:font-normal prose-p:my-1 prose-p:indent-8 prose-img:mx-auto prose-img:mix-blend-multiply dark:prose-img:mix-blend-normal">
+			<div className="prose w-full bg-background text-content lg:prose-lg prose-headings:text-center prose-headings:text-content prose-h1:font-normal prose-p:my-1 prose-p:indent-8 prose-a:text-content prose-blockquote:text-content prose-strong:text-content prose-code:text-content prose-ol:text-content prose-img:mx-auto">
 				<MDXRemote source={data?.content as string} />
 				{session?.user.id === data.user_id && <EditFooter slug={data?.slug} />}
 				<ShareButtons />

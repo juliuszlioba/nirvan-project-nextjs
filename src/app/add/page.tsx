@@ -20,15 +20,25 @@ export default async function Page() {
 		data: { session },
 	} = await supabase.auth.getSession()
 
+	const { data: user } = await supabase
+		.from('users')
+		.select('permission')
+		.eq('id', session?.user.id)
+		.single()
+
 	if (!session) {
 		redirect('/')
 	}
 
-	return (
-		<main
-			className={`mx-auto flex min-h-screen max-w-5xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
-		>
-			<AddPost />
-		</main>
-	)
+	if (session && user?.permission !== 'SUBSCRIBER') {
+		return (
+			<main
+				className={`mx-auto flex min-h-screen max-w-5xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
+			>
+				<AddPost />
+			</main>
+		)
+	} else {
+		redirect('/')
+	}
 }

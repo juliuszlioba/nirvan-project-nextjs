@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import AuthProvider from '@/components/AuthProvider'
-import { getCurrentTheme } from '@/lib/colorTheme'
+import { ThemeProvider } from '@/components/theme-provider'
 import { Header } from './Header'
 import { PT_Sans } from 'next/font/google'
 import '../styles/globals.css'
@@ -37,14 +37,15 @@ export default async function RootLayout({
 	} = await supabase.auth.getSession()
 
 	const accessToken = session?.access_token || null
-	const scheme = await getCurrentTheme()
 
 	return (
-		<html lang="en" data-theme={scheme === 'dark' ? 'dark' : 'light'}>
+		<html lang="en" suppressHydrationWarning>
 			<body className={`${pt_sans.className}`}>
 				<AuthProvider accessToken={accessToken}>
-					<Header />
-					{children}
+					<ThemeProvider defaultTheme="system" enableSystem>
+						<Header />
+						{children}
+					</ThemeProvider>
 				</AuthProvider>
 			</body>
 		</html>
