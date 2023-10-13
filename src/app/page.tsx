@@ -1,5 +1,5 @@
+import type { Database } from '@/lib/database.types'
 import ListItem from '@/components/ListItem'
-import type { Database } from '@/types/database.types'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { Library } from 'lucide-react'
@@ -17,7 +17,7 @@ export default async function Home() {
 	const { data: user } = await supabase
 		.from('users')
 		.select('permission')
-		.eq('id', session?.user.id)
+		.eq('id', session?.user.id as string)
 		.single()
 
 	const { data } = await supabase
@@ -43,7 +43,7 @@ export default async function Home() {
 			</div>
 
 			{session && user?.permission !== 'SUBSCRIBER' && data && (
-				<div className="divide-gray grid divide-y-2 divide-dashed">
+				<div className="grid divide-y-2 divide-dashed divide-gray-light">
 					{data?.map((item, index) => {
 						return <ListItem key={index} item={item} />
 					})}

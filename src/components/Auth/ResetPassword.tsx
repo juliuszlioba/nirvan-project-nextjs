@@ -1,5 +1,6 @@
 'use client'
 
+import type { Database } from '@/lib/database.types'
 import { useState } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import cn from 'classnames'
@@ -7,8 +8,6 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import Link from 'next/link'
 import * as Yup from 'yup'
-
-import type { Database } from '@/lib/database.types'
 
 const ResetPasswordSchema = Yup.object().shape({
 	email: Yup.string().email('Invalid email').required('Required'),
@@ -56,7 +55,7 @@ const ResetPassword = () => {
 
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className="flex flex-col sm:flex-row items-start gap-2 w-full"
+				className="flex w-full flex-col items-start gap-2 sm:flex-row"
 			>
 				<div className="w-full">
 					<input
@@ -70,7 +69,7 @@ const ResetPassword = () => {
 				</div>
 
 				<button
-					className="button max-sm:w-full whitespace-nowrap"
+					className="button whitespace-nowrap max-sm:w-full"
 					type="submit"
 				>
 					Send Instructions
@@ -82,7 +81,7 @@ const ResetPassword = () => {
 				<div className="text-blue-700 dark:text-blue-700">{successMsg}</div>
 			)}
 
-			<div className="pt-4 w-full">
+			<div className="w-full pt-4">
 				<Link href="/login" className="link">
 					Remember your password? Login.
 				</Link>

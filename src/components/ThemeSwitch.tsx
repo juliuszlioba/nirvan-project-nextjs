@@ -33,7 +33,7 @@ export default function ThemeSwitch() {
 	return (
 		<div className="flex flex-col items-center gap-4">
 			<div className="flex gap-2">
-				<Tooltip.Provider delayDuration={300}>
+				<Tooltip.Provider delayDuration={500}>
 					<Tooltip.Root>
 						<Tooltip.Trigger asChild>
 							<button
@@ -54,7 +54,7 @@ export default function ThemeSwitch() {
 					</Tooltip.Root>
 				</Tooltip.Provider>
 
-				<Tooltip.Provider delayDuration={300}>
+				<Tooltip.Provider delayDuration={500}>
 					<Tooltip.Root>
 						<Tooltip.Trigger asChild>
 							<button

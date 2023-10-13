@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import type { Database } from '@/types/database.types'
+import type { Database } from '@/lib/database.types'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
@@ -23,7 +23,7 @@ export default async function Page() {
 	const { data: user } = await supabase
 		.from('users')
 		.select('permission')
-		.eq('id', session?.user.id)
+		.eq('id', session?.user.id as string)
 		.single()
 
 	if (!session) {

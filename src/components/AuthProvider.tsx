@@ -1,10 +1,9 @@
 'use client'
 
+import type { Database } from '@/lib/database.types'
 import { /* createContext, */ useEffect } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
-
-import type { Database } from '@/lib/database.types'
 
 //export const AuthContext = createContext();
 

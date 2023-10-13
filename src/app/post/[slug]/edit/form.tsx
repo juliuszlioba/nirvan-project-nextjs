@@ -1,5 +1,6 @@
 'use client'
 
+import type { Database } from '@/lib/database.types'
 import { Fragment, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
@@ -35,7 +36,7 @@ export default function EditPost({
 	const [dbError, setDbError] = useState(false)
 	const [deleteModal, setDeleteModal] = useState(false)
 
-	const supabase = createClientComponentClient()
+	const supabase = createClientComponentClient<Database>()
 	const router = useRouter()
 
 	function closeModal() {
@@ -91,7 +92,7 @@ export default function EditPost({
 			.update({
 				title,
 				author,
-				year,
+				year: toInt(year) || undefined,
 				slug: slugify(title!),
 				content,
 			})
@@ -229,7 +230,7 @@ export default function EditPost({
 						leaveFrom="opacity-100"
 						leaveTo="opacity-0"
 					>
-						<div className="bg-gray fixed inset-0 bg-opacity-50 backdrop-blur-sm" />
+						<div className="fixed inset-0 bg-gray bg-opacity-50 backdrop-blur-sm" />
 					</Transition.Child>
 
 					<div className="fixed inset-0 overflow-y-auto">
@@ -243,10 +244,10 @@ export default function EditPost({
 								leaveFrom="opacity-100 scale-100"
 								leaveTo="opacity-0 scale-95"
 							>
-								<Dialog.Panel className="bg-gray w-full max-w-md transform overflow-hidden rounded-lg p-6 text-left align-middle shadow-xl transition-all">
+								<Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-lg bg-gray p-6 text-left align-middle shadow-xl transition-all">
 									<Dialog.Title
 										as="h3"
-										className="text-gray text-2xl font-medium leading-6"
+										className="text-2xl font-medium leading-6 text-gray"
 									>
 										Are you sure?
 									</Dialog.Title>

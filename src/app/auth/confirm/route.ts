@@ -1,11 +1,10 @@
 // More info: https://supabase.com/docs/guides/auth/server-side/email-based-auth-with-pkce-flow-for-ssr?framework=nextjs
 
+import type { NextRequest } from 'next/server'
+import type { Database } from '@/lib/database.types'
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
-
-import type { NextRequest } from 'next/server'
-import type { Database } from '@/lib/database.types'
 import { EmailOtpType } from '@supabase/supabase-js'
 
 export async function GET(req: NextRequest) {

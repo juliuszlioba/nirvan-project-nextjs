@@ -1,10 +1,12 @@
 'use client'
 
+import type { Database } from '@/lib/database.types'
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import slugify from '@/lib/slugify'
 import Link from 'next/link'
+import { toInt } from 'radash'
 import { Files, HelpCircle, Save } from 'lucide-react'
 
 export default function AddPost() {
@@ -16,7 +18,7 @@ export default function AddPost() {
 	const [formError, setFormError] = useState(false)
 	const [dbError, setDbError] = useState(false)
 
-	const supabase = createClientComponentClient()
+	const supabase = createClientComponentClient<Database>()
 	const router = useRouter()
 
 	const handleSubmit = async () => {
@@ -37,7 +39,7 @@ export default function AddPost() {
 			.insert({
 				title: titleRef.current?.value,
 				author: authorRef.current?.value,
-				year: yearRef.current?.value,
+				year: toInt(yearRef.current?.value),
 				slug: slugify(titleRef.current?.value!),
 				content: contentRef.current?.value,
 			})

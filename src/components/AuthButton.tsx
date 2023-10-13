@@ -1,17 +1,16 @@
 'use client'
 
+import type { Database } from '@/lib/database.types'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { UserCircle2, LogOut } from 'lucide-react'
 import * as Tooltip from '@radix-ui/react-tooltip'
 
-import type { Database } from '@/types/database.types'
-
 export function LoginButton() {
 	return (
 		<>
-			<Tooltip.Provider delayDuration={300}>
+			<Tooltip.Provider delayDuration={500}>
 				<Tooltip.Root>
 					<Tooltip.Trigger asChild>
 						<Link href="/login" title="Login" className="button-borderless">
@@ -43,14 +42,10 @@ export function LogOutButton() {
 
 	return (
 		<>
-			<Tooltip.Provider delayDuration={300}>
+			<Tooltip.Provider delayDuration={500}>
 				<Tooltip.Root>
 					<Tooltip.Trigger asChild>
-						<button
-							onClick={handleLogout}
-							title="Logout"
-							className="button-borderless"
-						>
+						<button onClick={handleLogout} className="button-borderless">
 							<LogOut strokeWidth={1.5} />
 						</button>
 					</Tooltip.Trigger>

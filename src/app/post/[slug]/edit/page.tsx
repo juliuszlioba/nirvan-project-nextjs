@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import type { Database } from '@/types/database.types'
+import type { Database } from '@/lib/database.types'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import EditPost from './form'

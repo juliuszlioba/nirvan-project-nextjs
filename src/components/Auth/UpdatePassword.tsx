@@ -1,5 +1,6 @@
 'use client'
 
+import type { Database } from '@/lib/database.types'
 import { useState } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import cn from 'classnames'
@@ -7,8 +8,6 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useRouter } from 'next/navigation'
 import * as Yup from 'yup'
-
-import type { Database } from '@/lib/database.types'
 
 const UpdatePasswordSchema = Yup.object().shape({
 	password: Yup.string().required('Required'),
@@ -54,7 +53,7 @@ const UpdatePassword = () => {
 
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className="flex flex-col sm:flex-row items-start gap-2 w-full"
+				className="flex w-full flex-col items-start gap-2 sm:flex-row"
 			>
 				<div className="w-full">
 					<input

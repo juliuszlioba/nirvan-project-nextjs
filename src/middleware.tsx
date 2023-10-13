@@ -1,8 +1,7 @@
+import type { Database } from '@/lib/database.types'
+import type { NextRequest } from 'next/server'
 import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
 import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
-
-import type { Database } from '@/types/database.types'
 
 // this middleware refreshes the user's session and must be run
 // for any Server Component route that uses `createServerComponentSupabaseClient`

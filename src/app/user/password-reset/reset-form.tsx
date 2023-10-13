@@ -1,12 +1,12 @@
 'use client'
 
+import type { Database } from '@/lib/database.types'
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import {
 	Session,
 	createClientComponentClient,
 } from '@supabase/auth-helpers-nextjs'
-import type { Database } from '@/types/database.types'
 
 export default function LoginForm() {
 	const passwordRef = useRef<HTMLInputElement>(null)
@@ -63,18 +63,18 @@ export default function LoginForm() {
 					type="password"
 					name="newpassword"
 					placeholder="new password"
-					className="bg-gray focus:ring-accent-1 w-full rounded-2xl px-4 py-2 focus:ring-2 focus-visible:outline-none"
+					className="w-full rounded-2xl bg-gray px-4 py-2 focus:ring-2 focus:ring-accent-1 focus-visible:outline-none"
 				/>
 				<input
 					ref={passwordRef}
 					type="password"
 					name="newpasswordrepeat"
 					placeholder="new password repeat"
-					className="bg-gray focus:ring-accent-1 w-full rounded-2xl px-4 py-2 focus:ring-2 focus-visible:outline-none"
+					className="w-full rounded-2xl bg-gray px-4 py-2 focus:ring-2 focus:ring-accent-1 focus-visible:outline-none"
 				/>
 				<button
 					onClick={handlePassChange}
-					className="border-gray hover:border-accent-1 flex items-center gap-2 rounded-2xl border-2 px-4 py-2"
+					className="flex items-center gap-2 rounded-2xl border-2 border-gray px-4 py-2 hover:border-accent-1"
 				>
 					Login
 				</button>

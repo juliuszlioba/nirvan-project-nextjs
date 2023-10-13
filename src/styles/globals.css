@@ -6,8 +6,8 @@
 	:root {
 		--color-background: 231 229 228;
 		--color-content: 23 23 23;
-		--color-gray: 212 212 212;
-		--color-gray-light: 234 234 234;
+		--color-gray: 190 190 190;
+		--color-gray-light: 210 210 210;
 		--color-accent-1: 162 28 175;
 	}
 
@@ -15,8 +15,8 @@
 		:root {
 			--color-background: 23 23 23;
 			--color-content: 231 229 228;
-			--color-gray: 41 37 36;
-			--color-gray-light: 42 42 42;
+			--color-gray: 80 80 80;
+			--color-gray-light: 50 50 50;
 			--color-accent-1: 162 28 175;
 		}
 	}
@@ -24,16 +24,16 @@
 	:root[data-theme='light'] {
 		--color-background: 231 229 228;
 		--color-content: 23 23 23;
-		--color-gray: 212 212 212;
-		--color-gray-light: 234 234 234;
+		--color-gray: 190 190 190;
+		--color-gray-light: 210 210 210;
 		--color-accent-1: 162 28 175;
 	}
 
 	:root[data-theme='dark'] {
 		--color-background: 23 23 23;
 		--color-content: 231 229 228;
-		--color-gray: 41 37 36;
-		--color-gray-light: 42 42 42;
+		--color-gray: 80 80 80;
+		--color-gray-light: 50 50 50;
 		--color-accent-1: 162 28 175;
 	}
 
@@ -47,7 +47,7 @@
 		@apply flex w-full flex-col gap-4;
 	}
 	.input {
-		@apply custom-focus rounded-2xl border-2 border-gray bg-gray-light;
+		@apply custom-focus rounded-2xl border-2 border-gray bg-white bg-opacity-40 placeholder:text-content;
 	}
 	.input-error {
 		@apply border-red-600 bg-red-100 dark:border-red-600 dark:bg-red-950;
