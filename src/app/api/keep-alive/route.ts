@@ -1,13 +1,10 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import supabaseServerClient from '@/lib/supabase'
 import { NextResponse } from 'next/server'
-
-import type { Database } from '@/lib/database.types'
 
 export const dynamic = 'force-dynamic'
 
 export async function GET(request: Request) {
-	const supabase = createServerComponentClient<Database>({ cookies })
+	const supabase = await supabaseServerClient()
 	const { data, count } = await supabase
 		.from('posts')
 		.select(`id, year, author, title, slug`, { count: 'exact' })

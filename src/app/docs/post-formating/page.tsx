@@ -15,7 +15,7 @@ const preseClass = `${literata.className} bg-background text-content prose-headi
 export default async function Page() {
 	return (
 		<main
-			className={`mx-auto flex min-h-screen max-w-5xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
+			className={`mx-auto flex max-w-5xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
 		>
 			<h1 className="text-3xl">Post formating rules</h1>
 

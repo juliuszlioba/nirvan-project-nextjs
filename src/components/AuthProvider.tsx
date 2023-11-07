@@ -1,8 +1,9 @@
 'use client'
 
 import type { Database } from '@/lib/database.types'
-import { /* createContext, */ useEffect } from 'react'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { createBrowserClient } from '@supabase/ssr'
+
+import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 //export const AuthContext = createContext();
@@ -14,7 +15,10 @@ const AuthProvider = ({
 	accessToken: string | null
 	children: React.ReactNode
 }) => {
-	const supabase = createClientComponentClient<Database>()
+	const supabase = createBrowserClient<Database>(
+		process.env.NEXT_PUBLIC_SUPABASE_URL!,
+		process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+	)
 	const router = useRouter()
 
 	useEffect(() => {

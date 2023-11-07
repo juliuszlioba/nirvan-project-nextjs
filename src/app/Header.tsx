@@ -1,13 +1,11 @@
-import type { Database } from '@/lib/database.types'
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import supabaseServerClient from '@/lib/supabase'
 import Link from 'next/link'
 import Login from './login'
 import { Library, FilePlus } from 'lucide-react'
 import ThemeSwitch from '@/components/ThemeSwitch'
 
 export async function Header() {
-	const supabase = createServerComponentClient<Database>({ cookies })
+	const supabase = await supabaseServerClient()
 	const {
 		data: { session },
 	} = await supabase.auth.getSession()

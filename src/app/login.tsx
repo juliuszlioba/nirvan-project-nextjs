@@ -1,5 +1,5 @@
 import { LoginButton, LogOutButton } from '@/components/AuthButton'
-import { Session } from '@supabase/auth-helpers-nextjs'
+import type { Session } from '@supabase/supabase-js'
 import { UserCircle2 } from 'lucide-react'
 import Link from 'next/link'
 

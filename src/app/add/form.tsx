@@ -3,7 +3,7 @@
 import type { Database } from '@/lib/database.types'
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { createBrowserClient } from '@supabase/ssr'
 import slugify from '@/lib/slugify'
 import Link from 'next/link'
 import { toInt } from 'radash'
@@ -18,7 +18,10 @@ export default function AddPost() {
 	const [formError, setFormError] = useState(false)
 	const [dbError, setDbError] = useState(false)
 
-	const supabase = createClientComponentClient<Database>()
+	const supabase = createBrowserClient<Database>(
+		process.env.NEXT_PUBLIC_SUPABASE_URL!,
+		process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+	)
 	const router = useRouter()
 
 	const handleSubmit = async () => {

@@ -3,7 +3,7 @@
 import type { Database } from '@/lib/database.types'
 import { Fragment, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { createBrowserClient } from '@supabase/ssr'
 import { Dialog, Transition } from '@headlessui/react'
 import slugify from '@/lib/slugify'
 import { toInt } from 'radash'
@@ -36,7 +36,10 @@ export default function EditPost({
 	const [dbError, setDbError] = useState(false)
 	const [deleteModal, setDeleteModal] = useState(false)
 
-	const supabase = createClientComponentClient<Database>()
+	const supabase = createBrowserClient<Database>(
+		process.env.NEXT_PUBLIC_SUPABASE_URL!,
+		process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+	)
 	const router = useRouter()
 
 	function closeModal() {

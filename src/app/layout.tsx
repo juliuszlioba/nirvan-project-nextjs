@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import supabaseServerClient from '@/lib/supabase'
 import AuthProvider from '@/components/AuthProvider'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Header } from './Header'
@@ -30,7 +29,7 @@ export default async function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	const supabase = createServerComponentClient({ cookies })
+	const supabase = await supabaseServerClient()
 
 	const {
 		data: { session },

@@ -2,7 +2,7 @@
 
 import type { Database } from '@/lib/database.types'
 import { useState } from 'react'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { createBrowserClient } from '@supabase/ssr'
 import cn from 'classnames'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -18,7 +18,10 @@ interface ResetPasswordFormValues {
 }
 
 const ResetPassword = () => {
-	const supabase = createClientComponentClient<Database>()
+	const supabase = createBrowserClient<Database>(
+		process.env.NEXT_PUBLIC_SUPABASE_URL!,
+		process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+	)
 	const [errorMsg, setErrorMsg] = useState<string | null>(null)
 	const [successMsg, setSuccessMsg] = useState<string | null>(null)
 

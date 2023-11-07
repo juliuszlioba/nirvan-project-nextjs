@@ -1,8 +1,8 @@
 ## Supabase
 
-[Studio](http://localhost:54323)
+[Supabase Studio :local](http://127.0.0.1:54323)
 
 
 ### Docs
 
-https://supabase.com/docs/guides/auth/auth-helpers/nextjs
+[Supabase Auth Docs](https://supabase.com/docs/guides/auth/server-side/creating-a-client?environment=client-component)

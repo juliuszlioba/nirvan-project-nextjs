@@ -1,6 +1,4 @@
-import type { Database } from '@/lib/database.types'
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import supabaseServerClient from '@/lib/supabase'
 import { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Literata } from 'next/font/google'
@@ -20,7 +18,7 @@ const literata = Literata({
 export const revalidate = 0
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-	const supabase = createServerComponentClient<Database>({ cookies })
+	const supabase = await supabaseServerClient()
 
 	// fetch data
 	const { data } = await supabase
@@ -42,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Page({ params }: Props) {
-	const supabase = createServerComponentClient<Database>({ cookies })
+	const supabase = await supabaseServerClient()
 
 	const {
 		data: { session },
@@ -61,7 +59,7 @@ export default async function Page({ params }: Props) {
 
 	return (
 		<main
-			className={`${literata.className} flex min-h-screen flex-col items-center p-4 py-8 md:p-8 md:pt-12 xl:py-16 2xl:py-24`}
+			className={`${literata.className} flex flex-col items-center p-4 py-8 md:p-8 md:pt-12 xl:py-16 2xl:py-24`}
 		>
 			<div className="pb-8">
 				<h1 className="pb-3 text-center text-2xl lg:text-4xl">{data.title}</h1>
