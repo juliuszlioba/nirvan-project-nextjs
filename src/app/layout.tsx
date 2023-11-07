@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
-
 import supabaseServerClient from '@/lib/supabase'
 import AuthProvider from '@/components/AuthProvider'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Analytics } from '@vercel/analytics/react'
 import { Header } from './Header'
 import { PT_Sans } from 'next/font/google'
+
 import '../styles/globals.css'
 
 const pt_sans = PT_Sans({
@@ -46,6 +47,7 @@ export default async function RootLayout({
 						{children}
 					</ThemeProvider>
 				</AuthProvider>
+				<Analytics />
 			</body>
 		</html>
 	)
