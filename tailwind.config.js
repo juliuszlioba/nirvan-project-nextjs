@@ -22,8 +22,9 @@ module.exports = {
 			current: 'currentColor',
 			white: '#ffffff',
 			gray: 'rgb(var(--color-gray) / <alpha-value>)',
-			"gray-light": 'rgb(var(--color-gray-light) / <alpha-value>)',
+			'gray-light': 'rgb(var(--color-gray-light) / <alpha-value>)',
 			red: colors.red,
+			fuchsia: colors.fuchsia
 		},
 
 		extend: {

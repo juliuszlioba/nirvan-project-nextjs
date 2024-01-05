@@ -23,7 +23,7 @@ export default async function Page() {
 
 			<div className="space-y-24 pt-12 md:space-y-8">
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">#</span> Heading 1
@@ -49,7 +49,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								Paragraph. Lorem, ipsum dolor sit amet consectetur adipisicing
@@ -71,7 +71,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">**</span>bold text
@@ -95,7 +95,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">&gt;</span> blockquote
@@ -111,7 +111,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">1.</span> First item
@@ -133,7 +133,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">-</span> First item
@@ -155,7 +155,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">`</span>code
@@ -172,7 +172,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p className="text-fuchsia-700">
 								[title](https://www.example.com)
@@ -188,7 +188,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p className="text-fuchsia-700">---</p>
 						</div>
@@ -200,7 +200,7 @@ export default async function Page() {
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p className="text-fuchsia-700">![alt text](image.jpg)</p>
 						</div>
@@ -225,29 +225,45 @@ export default async function Page() {
 
 			<div className="space-y-24 pt-12 md:space-y-8">
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
-							<div>To add more space between Paragraph 1 and Paragraph 2.</div>
+							<div>
+								To add more space between Paragraph 1 and Paragraph 2 use class
+								&apos;divider&apos;.
+							</div>
 							<div>
 								Paragraph 1. Lorem, ipsum dolor sit amet consectetur adipisicing
 								elit. Reiciendis quis quos velit esse cumque laborum.
 							</div>
 							<div>
 								<span className="text-fuchsia-700">
-									&lt;p className=&quot;divider&quot;&gt;
+									&lt;p class=&quot;divider&quot;&gt;
 								</span>
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
 							</div>
-							<span className="text-fuchsia-700">&lt;/p&gt;</span>
+
 							<div>
 								Paragraph 2. Enim aliquid omnis aliquam dolore facere
 								exercitationem obcaecati optio natus illum ipsam ratione
 								impedit? Earum?
 							</div>
+							<div>
+								<span className="text-fuchsia-700">
+									&lt;p class=&quot;no-indent&quot;&gt;
+								</span>
+								Paragraph 3 with no indenting on paragraph. Enim aliquid omnis
+								aliquam dolore facere exercitationem obcaecati optio natus illum
+								ipsam ratione impedit? Earum?
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</div>
 						</div>
 					</div>
 
 					<div className={preseClass}>
-						<p>To add more space between Paragraph 1 and Paragraph 2.</p>
+						<p>
+							To add more space between Paragraph 1 and Paragraph 2 use class
+							&apos;divider&apos;.
+						</p>
 						<p>
 							Paragraph 1. Lorem, ipsum dolor sit amet consectetur adipisicing
 							elit. Reiciendis quis quos velit esse cumque laborum.
@@ -258,15 +274,21 @@ export default async function Page() {
 							exercitationem obcaecati optio natus illum ipsam ratione impedit?
 							Earum?
 						</p>
+						<p className="divider"></p>
+						<p className="no-indent">
+							Paragraph 3 with no indenting on paragraph. Enim aliquid omnis
+							aliquam dolore facere exercitationem obcaecati optio natus illum
+							ipsam ratione impedit? Earum?
+						</p>
 					</div>
 				</div>
 
 				<div className="grid gap-8 md:grid-cols-2">
-					<div className="border-gray border-b-2 border-dashed pb-4 pr-4 md:border-b-0 md:border-r-2">
+					<div className="border-b-2 border-dashed border-gray pb-4 pr-4 md:border-b-0 md:border-r-2">
 						<div className="space-y-4">
 							<p>
 								<span className="text-fuchsia-700">
-									&lt;p className=&quot;text-right&quot;&gt;
+									&lt;p class=&quot;text-right&quot;&gt;
 								</span>
 								Centered text
 								<span className="text-fuchsia-700">&lt;/p&gt;</span>
@@ -274,7 +296,7 @@ export default async function Page() {
 
 							<p>
 								<span className="text-fuchsia-700">
-									&lt;p className=&quot;text-right&quot;&gt;
+									&lt;p class=&quot;text-right&quot;&gt;
 								</span>
 								Right aligned text
 								<span className="text-fuchsia-700">&lt;/p&gt;</span>
@@ -282,7 +304,7 @@ export default async function Page() {
 
 							<p>
 								<span className="text-fuchsia-700">
-									&lt;p className=&quot;underline&quot;&gt;
+									&lt;p class=&quot;underline&quot;&gt;
 								</span>
 								underline
 								<span className="text-fuchsia-700">&lt;/p&gt;</span>
@@ -290,7 +312,7 @@ export default async function Page() {
 
 							<p>
 								<span className="text-fuchsia-700">
-									&lt;p className=&quot;overline&quot;&gt;
+									&lt;p class=&quot;overline&quot;&gt;
 								</span>
 								overline
 								<span className="text-fuchsia-700">&lt;/p&gt;</span>
@@ -298,9 +320,17 @@ export default async function Page() {
 
 							<p>
 								<span className="text-fuchsia-700">
-									&lt;p className=&quot;line-through&quot;&gt;
+									&lt;p class=&quot;line-through&quot;&gt;
 								</span>
 								line-through<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p class=&quot;!indent-0&quot;&gt;
+								</span>
+								no indent (alternative)
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
 							</p>
 						</div>
 					</div>
@@ -311,6 +341,7 @@ export default async function Page() {
 						<p className="underline">underline</p>
 						<p className="overline">overline</p>
 						<p className="line-through">line-through</p>
+						<p className="!indent-0">no indent</p>
 					</div>
 				</div>
 			</div>

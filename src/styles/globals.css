@@ -132,3 +132,7 @@
 .prose .divider {
 	height: 1.5rem;
 }
+
+.no-indent {
+	@apply !indent-0;
+}

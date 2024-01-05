@@ -76,6 +76,7 @@ export default async function Page({ params }: Props) {
 				<p className="overline"></p>
 				<p className="line-through"></p>
 				<p className="divider"></p>
+				<p className="!indent-0"></p>
 			</div>
 		</main>
 	)
