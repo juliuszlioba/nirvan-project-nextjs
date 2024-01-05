@@ -27,7 +27,13 @@ export default async function Home() {
 			className={`mx-auto flex max-w-5xl flex-col gap-4 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
 		>
 			<div className="border-gray pb-4">
-				<div className="flex items-center gap-2 pb-2">
+				<div
+					className={`flex items-center gap-2 pb-2 ${
+						session && user?.permission !== 'SUBSCRIBER' && data
+							? ''
+							: 'justify-center'
+					}`}
+				>
 					<Library strokeWidth={1.5} className="h-10 w-10" />
 					<p className="text-3xl">SFFBC</p>
 				</div>
