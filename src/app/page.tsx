@@ -31,12 +31,12 @@ export default async function Home() {
 					<Library strokeWidth={1.5} className="h-10 w-10" />
 					<p className="text-3xl">SFFBC</p>
 				</div>
-				<p className="tracking-wide">
+				{/* <p className="tracking-wide">
 					Welcome to the Science Fiction & Fantasy Book Club, where you&apos;ll
 					find an exhilarating collection of short stories that will transport
 					you to new dimensions, challenge your perceptions, and leave you
 					craving more.
-				</p>
+				</p> */}
 			</div>
 
 			{session && user?.permission !== 'SUBSCRIBER' && data && (
