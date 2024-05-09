@@ -10,9 +10,11 @@ export default async function Home() {
 
 	if (!user) {
 		return (
-			<div className="flex items-center justify-center gap-2">
-				<Library strokeWidth={1.5} className="h-10 w-10" />
-				<p className="text-4xl font-light">SFFBC</p>
+			<div className="flex items-start justify-center gap-2">
+				<Library strokeWidth={1.5} className="h-10 w-10 shrink-0" />
+				<p className="text-4xl font-light">
+					Science Fiction & Fantasy Book Club
+				</p>
 			</div>
 		)
 	}
@@ -80,9 +82,11 @@ export default async function Home() {
 
 	return (
 		<>
-			<div className="mb-12 flex items-center justify-start gap-2">
-				<Library strokeWidth={1.5} className="h-10 w-10" />
-				<p className="text-4xl font-light">SFFBC</p>
+			<div className="mb-12 flex items-start justify-start gap-2">
+				<Library strokeWidth={1.5} className="h-10 w-10 shrink-0" />
+				<p className="text-4xl font-light">
+					Science Fiction & Fantasy Book Club
+				</p>
 			</div>
 
 			{groupedData && (
@@ -90,8 +94,10 @@ export default async function Home() {
 					{groupedData.map((postAuthor, index) => {
 						return (
 							<div key={index} className="pb-8">
-								<h2 className="text-xl text-primary">{postAuthor.author}</h2>
-								<div className="divide-gray-light divide-y-2 divide-dashed">
+								<h2 className="mb-2 text-xl font-medium">
+									{postAuthor.author}
+								</h2>
+								<div className="grid gap-2">
 									{postAuthor.posts.map((post, index) => (
 										<ListItem key={index} {...post} />
 									))}

@@ -14,6 +14,8 @@ export default async function UserPage() {
 	const version = publicRuntimeConfig?.version
 	const supabase = createClient()
 
+	console.log(publicRuntimeConfig)
+
 	const {
 		data: { user },
 	} = await supabase.auth.getUser()

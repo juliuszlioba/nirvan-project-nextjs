@@ -17,6 +17,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
 		data: { user },
 	} = await supabase.auth.getUser()
 
+	const { data: userRoles } = await supabase
+		.from('users')
+		.select('permission')
+		.eq('id', user?.id as string)
+		.single()
+
 	const { data } = await supabase
 		.from('posts')
 		.select('*')
@@ -28,7 +34,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 		return redirect('/')
 	}
 
-	if (user?.id !== data.user_id) {
+	if (user?.id !== data.user_id && userRoles?.permission !== 'ADMIN') {
 		return redirect('/')
 	}
 

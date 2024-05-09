@@ -45,7 +45,10 @@ export default function ListItem({ id, year, title, slug }: TListItem) {
 	}
 
 	return (
-		<div key={id} className="flex items-center gap-2 py-4">
+		<div
+			key={id}
+			className="flex flex-col gap-2 rounded-lg bg-muted/50 px-4 py-4 sm:flex-row"
+		>
 			<div className="grid">
 				<Link href={`/post/${slug}`} className="link text-xl">
 					{title}
@@ -53,13 +56,13 @@ export default function ListItem({ id, year, title, slug }: TListItem) {
 				<span>{year}</span>
 			</div>
 
-			<div className="ml-auto flex flex-col gap-2 md:flex-row md:items-center">
+			<div className="ml-auto flex gap-2 md:items-center">
 				<Button variant={'ghost'} onClick={handleCopyClick} className="gap-2">
 					{isCopied ? (
-						<>
+						<span className="flex items-center gap-2 text-green-600">
 							<Check />
 							Copied!
-						</>
+						</span>
 					) : (
 						<>
 							<LinkIcon />

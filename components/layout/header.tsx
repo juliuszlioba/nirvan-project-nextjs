@@ -5,6 +5,13 @@ import Link from 'next/link'
 import AuthButton from '@/components/auth-button'
 import { createClient } from '@/utils/supabase/server'
 
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from '@/components/ui/tooltip'
+
 export default async function Header() {
 	const supabase = createClient()
 	const {
@@ -21,21 +28,50 @@ export default async function Header() {
 		<div className="px-4">
 			<div className="mx-auto flex max-w-5xl items-center justify-between border-b-2 border-dashed py-4">
 				<div className="flex gap-2">
-					<Button variant={'ghost'} size={'icon'} asChild>
-						<Link href={'/'}>
-							<Library strokeWidth={1.5} />
-						</Link>
-					</Button>
 					{user &&
-						(userRoles?.permission === 'USER' ||
-							userRoles?.permission === 'ADMIN') && (
-							<Button variant={'outline'} asChild>
-								<Link href={'/add'} className="gap-1">
-									<FilePlus strokeWidth={1.5} />
-									<span className="max-sm:hidden">Add Story</span>
-								</Link>
-							</Button>
-						)}
+					(userRoles?.permission === 'USER' ||
+						userRoles?.permission === 'ADMIN') ? (
+						<>
+							<TooltipProvider>
+								<Tooltip delayDuration={0}>
+									<TooltipTrigger asChild>
+										<div>
+											<Button variant={'ghost'} size={'icon'} asChild>
+												<Link href={'/'} className="gap-1">
+													<Library strokeWidth={1.5} />
+												</Link>
+											</Button>
+										</div>
+									</TooltipTrigger>
+									<TooltipContent>
+										<p>Posts List</p>
+									</TooltipContent>
+								</Tooltip>
+							</TooltipProvider>
+
+							<TooltipProvider>
+								<Tooltip delayDuration={0}>
+									<TooltipTrigger asChild>
+										<div>
+											<Button variant={'outline'} size={'icon'} asChild>
+												<Link href={'/add'} className="gap-1">
+													<FilePlus strokeWidth={1.5} />
+												</Link>
+											</Button>
+										</div>
+									</TooltipTrigger>
+									<TooltipContent>
+										<p>Add New Story</p>
+									</TooltipContent>
+								</Tooltip>
+							</TooltipProvider>
+						</>
+					) : (
+						<div className="flex items-center gap-1">
+							<Library strokeWidth={1.5} />
+							<span className="text-xl">SFFBC</span>
+						</div>
+					)}
 				</div>
 				<div className="flex gap-2">
 					<AuthButton />
