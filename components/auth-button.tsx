@@ -17,6 +17,12 @@ export default async function AuthButton() {
 		data: { user },
 	} = await supabase.auth.getUser()
 
+	const { data: userMetaData } = await supabase
+		.from('users')
+		.select('username')
+		.eq('id', user?.id as string)
+		.single()
+
 	const signOut = async () => {
 		'use server'
 
@@ -31,7 +37,7 @@ export default async function AuthButton() {
 				<Tooltip delayDuration={0}>
 					<TooltipTrigger asChild>
 						<div>
-							<Link href="/user">Hey, {user.email}!</Link>
+							<Link href="/user">Hey, {userMetaData?.username}!</Link>
 						</div>
 					</TooltipTrigger>
 					<TooltipContent>

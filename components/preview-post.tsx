@@ -47,7 +47,9 @@ export default async function PreviewPost({
 	return (
 		<>
 			<p>Content preview:</p>
-			<div className={`${literata.className} border-2 border-dashed p-8`}>
+			<div
+				className={`${literata.className} rounded-lg border-2 border-dashed p-8`}
+			>
 				<div className="prose mx-auto w-full bg-background text-foreground lg:prose-lg prose-headings:text-center prose-headings:text-foreground prose-h1:font-normal prose-p:my-2 prose-p:indent-8 prose-p:leading-[1.45] prose-a:text-foreground prose-blockquote:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-ol:text-foreground prose-img:mx-auto">
 					{getContent()}
 				</div>

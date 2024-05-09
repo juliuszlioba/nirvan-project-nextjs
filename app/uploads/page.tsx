@@ -27,9 +27,7 @@ export default async function Page() {
 		.order('createdat', { ascending: false })
 
 	return (
-		<main
-			className={`mx-auto flex max-w-5xl flex-col gap-8 p-4 py-8 md:p-8 xl:py-12 2xl:py-24`}
-		>
+		<main className="flex flex-col gap-8">
 			<div className="flex flex-col gap-4 rounded-md bg-muted/50 p-6">
 				<h1 className="text-2xl">Upload New Image</h1>
 				<UploadFileForm />

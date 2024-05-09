@@ -90,10 +90,10 @@ export default async function Home() {
 			</div>
 
 			{groupedData && (
-				<div className="grid">
+				<div className="grid gap-8 pb-4">
 					{groupedData.map((postAuthor, index) => {
 						return (
-							<div key={index} className="pb-8">
+							<div key={index}>
 								<h2 className="mb-2 text-xl font-medium">
 									{postAuthor.author}
 								</h2>

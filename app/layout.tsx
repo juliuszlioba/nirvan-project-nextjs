@@ -33,7 +33,7 @@ export default function RootLayout({
 				>
 					<Header />
 					<div className="px-4">
-						<main className="mx-auto max-w-5xl py-12 lg:py-24">{children}</main>
+						<main className="mx-auto max-w-5xl pt-12 lg:py-24">{children}</main>
 					</div>
 				</ThemeProvider>
 			</body>

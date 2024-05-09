@@ -37,7 +37,7 @@ export default function Login({
 				<p>Please enter your credentials.</p>
 			</div>
 
-			<div className="flex gap-2">
+			<div className="flex flex-col gap-2 md:flex-row">
 				<Input
 					name="email"
 					type="email"
@@ -50,13 +50,12 @@ export default function Login({
 					placeholder="••••••••"
 					required
 				/>
-
 				<SubmitButton formAction={signIn} pendingText="Signing In...">
 					Sign In
 				</SubmitButton>
 			</div>
 
-			<div>
+			<div className="flex justify-center md:justify-start">
 				<Button asChild variant={'ghost'}>
 					<Link href="/reset-password" className="gap-2">
 						<KeyRound strokeWidth={1.5} />

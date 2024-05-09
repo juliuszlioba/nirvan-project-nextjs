@@ -1,9 +1,9 @@
 import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
 import getConfig from 'next/config'
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
 	title: 'User',
@@ -13,8 +13,6 @@ export default async function UserPage() {
 	const { publicRuntimeConfig } = getConfig()
 	const version = publicRuntimeConfig?.version
 	const supabase = createClient()
-
-	console.log(publicRuntimeConfig)
 
 	const {
 		data: { user },

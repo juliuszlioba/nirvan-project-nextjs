@@ -26,8 +26,8 @@ export default async function Header() {
 
 	return (
 		<div className="px-4">
-			<div className="mx-auto flex max-w-5xl items-center justify-between border-b-2 border-dashed py-4">
-				<div className="flex gap-2">
+			<div className="mx-auto flex max-w-5xl items-center justify-between gap-2 border-b-2 border-dashed py-4">
+				<div className="flex items-center gap-2">
 					{user &&
 					(userRoles?.permission === 'USER' ||
 						userRoles?.permission === 'ADMIN') ? (
@@ -73,7 +73,7 @@ export default async function Header() {
 						</div>
 					)}
 				</div>
-				<div className="flex gap-2">
+				<div className="flex items-center gap-2">
 					<AuthButton />
 					<ModeToggle />
 				</div>

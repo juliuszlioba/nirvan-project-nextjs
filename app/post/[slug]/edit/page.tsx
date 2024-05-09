@@ -39,7 +39,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 	}
 
 	return (
-		<div className="space-y-4">
+		<div className="space-y-4 pb-4">
 			<EditPost post={data} />
 			<PreviewPost post={data} />
 		</div>
