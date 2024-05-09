@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 		return redirect('/')
 	}
 
-	if (user?.id !== data.user_id && userRoles?.permission !== 'ADMIN') {
+	if (user?.id !== data.user_id) {
 		return redirect('/')
 	}
 

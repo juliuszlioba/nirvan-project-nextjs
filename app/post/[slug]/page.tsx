@@ -75,9 +75,7 @@ export default async function PostPage({ params }: Props) {
 				</div>
 			</div>
 			<div>
-				{(user?.id === data.user_id || userRoles?.permission === 'ADMIN') && (
-					<EditFooter slug={data?.slug} />
-				)}
+				{user?.id === data.user_id && <EditFooter slug={data?.slug} />}
 				<ShareButtons />
 				<div className="hidden">
 					<p className="text-right"></p>
