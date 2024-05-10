@@ -33,7 +33,7 @@ export default async function Header() {
 						userRoles?.permission === 'ADMIN') ? (
 						<>
 							<TooltipProvider>
-								<Tooltip delayDuration={0}>
+								<Tooltip delayDuration={500}>
 									<TooltipTrigger asChild>
 										<div>
 											<Button variant={'ghost'} size={'icon'} asChild>
@@ -50,7 +50,7 @@ export default async function Header() {
 							</TooltipProvider>
 
 							<TooltipProvider>
-								<Tooltip delayDuration={0}>
+								<Tooltip delayDuration={500}>
 									<TooltipTrigger asChild>
 										<div>
 											<Button variant={'outline'} size={'icon'} asChild>

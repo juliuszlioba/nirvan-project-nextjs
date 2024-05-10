@@ -24,7 +24,7 @@ export function ModeToggle() {
 
 	return (
 		<TooltipProvider>
-			<Tooltip delayDuration={0}>
+			<Tooltip delayDuration={500}>
 				<DropdownMenu>
 					<TooltipTrigger asChild>
 						<div>

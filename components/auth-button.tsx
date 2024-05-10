@@ -34,7 +34,7 @@ export default async function AuthButton() {
 	return user ? (
 		<div className="flex items-center gap-4">
 			<TooltipProvider>
-				<Tooltip delayDuration={0}>
+				<Tooltip delayDuration={500}>
 					<TooltipTrigger asChild>
 						<div>
 							<Link href="/user">Hey, {userMetaData?.username}!</Link>
@@ -48,7 +48,7 @@ export default async function AuthButton() {
 
 			<form action={signOut}>
 				<TooltipProvider>
-					<Tooltip delayDuration={0}>
+					<Tooltip delayDuration={500}>
 						<TooltipTrigger asChild>
 							<div>
 								<Button size={'icon'} variant={'outline'}>
@@ -65,7 +65,7 @@ export default async function AuthButton() {
 		</div>
 	) : (
 		<TooltipProvider>
-			<Tooltip delayDuration={0}>
+			<Tooltip delayDuration={500}>
 				<TooltipTrigger asChild>
 					<div>
 						<Button variant={'outline'} size={'icon'} asChild>
