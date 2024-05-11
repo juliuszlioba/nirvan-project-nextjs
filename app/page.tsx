@@ -77,9 +77,7 @@ export default async function Home() {
 		<>
 			<div className="mb-12 flex items-start justify-start gap-2">
 				<Library strokeWidth={1.5} className="h-10 w-10 shrink-0" />
-				<p className="text-4xl font-light">
-					Science Fiction & Fantasy Book Club
-				</p>
+				<p className="text-4xl font-light">SFFBC</p>
 			</div>
 
 			{groupedData && (
