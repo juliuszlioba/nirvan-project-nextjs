@@ -50,7 +50,7 @@ export default async function PreviewPost({
 			<div
 				className={`${literata.className} rounded-lg border-2 border-dashed p-8`}
 			>
-				<div className="prose mx-auto w-full bg-background text-foreground lg:prose-lg prose-headings:text-center prose-headings:text-foreground prose-h1:font-normal prose-p:my-2 prose-p:indent-8 prose-p:leading-[1.45] prose-a:text-foreground prose-blockquote:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-ol:text-foreground prose-img:mx-auto">
+				<div className="prose mx-auto w-full bg-background pb-12 text-foreground lg:prose-lg prose-headings:text-center prose-headings:text-foreground prose-h1:font-normal prose-p:my-1 prose-p:indent-8 prose-p:leading-[1.25] prose-a:text-foreground prose-blockquote:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-ol:text-foreground prose-img:mx-auto">
 					{getContent()}
 				</div>
 			</div>

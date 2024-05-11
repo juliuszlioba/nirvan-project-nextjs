@@ -66,11 +66,12 @@ export default async function PostPage({ params }: Props) {
 					<h1 className="pb-3 text-center text-2xl lg:text-4xl">
 						{data.title}
 					</h1>
-					<p className="text-center italic">
+					{/* <p className="text-center">{data.year}</p> */}
+					<p className="text-center">
 						by {data.author_first_name} {data.author_last_name}
 					</p>
 				</div>
-				<div className="prose mx-auto w-full bg-background pb-12 text-foreground lg:prose-lg prose-headings:text-center prose-headings:text-foreground prose-h1:font-normal prose-p:my-2 prose-p:indent-8 prose-p:leading-[1.45] prose-a:text-foreground prose-blockquote:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-ol:text-foreground prose-img:mx-auto">
+				<div className="prose mx-auto w-full bg-background pb-12 text-foreground lg:prose-lg prose-headings:text-center prose-headings:text-foreground prose-h1:font-normal prose-p:my-1 prose-p:indent-8 prose-p:leading-[1.25] prose-a:text-foreground prose-blockquote:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-ol:text-foreground prose-img:mx-auto">
 					<MDXRemote source={data?.content as string} />
 				</div>
 			</div>
@@ -85,6 +86,7 @@ export default async function PostPage({ params }: Props) {
 					<p className="divider"></p>
 					<p className="picture-caption"></p>
 					<p className="!indent-0"></p>
+					<p className="text-justify"></p>
 				</div>
 			</div>
 		</>

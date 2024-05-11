@@ -9,14 +9,7 @@ export default async function Home() {
 	} = await supabase.auth.getUser()
 
 	if (!user) {
-		return (
-			<div className="flex items-start justify-center gap-2">
-				<Library strokeWidth={1.5} className="h-10 w-10 shrink-0" />
-				<p className="text-4xl font-light">
-					Science Fiction & Fantasy Book Club
-				</p>
-			</div>
-		)
+		return null
 	}
 
 	const { data: posts } = await supabase
@@ -61,7 +54,7 @@ export default async function Home() {
 				title,
 				slug,
 			}))
-			posts.sort((a, b) => b.year - a.year)
+			posts.sort((a, b) => a.year - b.year)
 
 			groupedAndSortedBooks.push({
 				author,
