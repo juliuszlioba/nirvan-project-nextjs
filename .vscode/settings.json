@@ -1,8 +1,6 @@
 {
 	"workbench.colorCustomizations": {
-		"titleBar.activeBackground": "#a21caf",
-		"titleBar.activeForeground": "#fff",
-		"titleBar.inactiveBackground": "#66106f",
+		"titleBar.border": "#a21caf",
 	},
   "editor.guides.bracketPairs": "active",
   "tailwindCSS.experimental.classRegex": [

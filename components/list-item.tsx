@@ -47,10 +47,11 @@ export default function ListItem({ id, year, title, slug }: TListItem) {
 	return (
 		<div
 			key={id}
-			className="flex flex-col gap-2 rounded-lg bg-muted/50 px-4 py-1 sm:flex-row"
+			className="flex flex-col gap-2 rounded-lg bg-muted/70 py-1 pl-4 pr-1 sm:flex-row"
 		>
-			<div className="flex items-center gap-2">
-				<span className="">{year}</span>
+			<div className="flex items-center gap-2 py-2">
+				<span className="font-light">{year}</span>
+				<span className="font-medium text-border">|</span>
 				<Link href={`/post/${slug}`} className="link hover:text-primary">
 					{title}
 				</Link>

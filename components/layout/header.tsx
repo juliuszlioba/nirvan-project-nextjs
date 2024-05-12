@@ -36,9 +36,12 @@ export default async function Header() {
 								<Tooltip delayDuration={500}>
 									<TooltipTrigger asChild>
 										<div>
-											<Button variant={'ghost'} size={'icon'} asChild>
+											<Button variant={'ghost'} size={'icon-with-text'} asChild>
 												<Link href={'/'} className="gap-1">
 													<Library strokeWidth={1.5} />
+													<span className="text-xl font-normal max-md:hidden">
+														SFFBC
+													</span>
 												</Link>
 											</Button>
 										</div>
