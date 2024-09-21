@@ -85,8 +85,11 @@ export default async function PostPage({ params }: Props) {
 					<p className="line-through"></p>
 					<p className="divider"></p>
 					<p className="picture-caption"></p>
-					<p className="!indent-0"></p>
 					<p className="text-justify"></p>
+					<p className="!indent-0"></p>
+					<p className="!indent-20"></p>
+					<p className="!indent-40"></p>
+					<p className="!indent-60"></p>
 				</div>
 			</div>
 		</>

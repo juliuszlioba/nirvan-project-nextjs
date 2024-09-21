@@ -350,8 +350,36 @@ export default async function Page() {
 								<span className="text-fuchsia-700">
 									&lt;p class=&quot;!indent-0&quot;&gt;
 								</span>
-								no indent (alternative)
+								no indent
 								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p class=&quot;!indent-20&quot;&gt;
+								</span>
+								indent 20 (80px)
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p class=&quot;!indent-40&quot;&gt;
+								</span>
+								indent 40 (160px)
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p class=&quot;!indent-60&quot;&gt;
+								</span>
+								indent 60 (240px)
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p class=&quot;text-justify&quot;&gt;
+								</span>
+								text-justify<span className="text-fuchsia-700">&lt;/p&gt;</span>
 							</p>
 						</div>
 					</div>
@@ -362,7 +390,17 @@ export default async function Page() {
 						<p className="underline">underline</p>
 						<p className="overline">overline</p>
 						<p className="line-through">line-through</p>
+
 						<p className="!indent-0">no indent</p>
+						<p className="!indent-20">indent 20</p>
+						<p className="!indent-40">indent 40</p>
+						<p className="!indent-60">indent 60</p>
+						<p className="text-justify">
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+							Consectetur qui esse, deserunt saepe nisi libero recusandae
+							eligendi corrupti ab? Itaque optio sed sunt incidunt, vel
+							excepturi fugit libero illo iusto!
+						</p>
 					</div>
 				</div>
 			</div>
