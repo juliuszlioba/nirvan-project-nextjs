@@ -348,6 +348,42 @@ export default async function Page() {
 
 							<p>
 								<span className="text-fuchsia-700">
+									&lt;p class=&quot;text-xl&quot;&gt;
+								</span>
+								texl-xl
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p class=&quot;text-2xl&quot;&gt;
+								</span>
+								texl-2xl
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p class=&quot;text-3xl&quot;&gt;
+								</span>
+								texl-3xl
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p class=&quot;text-4xl&quot;&gt;
+								</span>
+								texl-4xl
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+							<p>
+								<span className="text-fuchsia-700">
+									&lt;p class=&quot;text-5xl&quot;&gt;
+								</span>
+								texl-5xl
+								<span className="text-fuchsia-700">&lt;/p&gt;</span>
+							</p>
+
+							<p>
+								<span className="text-fuchsia-700">
 									&lt;p class=&quot;!indent-0&quot;&gt;
 								</span>
 								no indent
@@ -391,13 +427,19 @@ export default async function Page() {
 						<p className="overline">overline</p>
 						<p className="line-through">line-through</p>
 
-						<p className="!indent-0">no indent</p>
-						<p className="!indent-20">indent 20</p>
-						<p className="!indent-40">indent 40</p>
-						<p className="!indent-60">indent 60</p>
+						<p className="text-xl">text-xl</p>
+						<p className="text-2xl">text-2xl</p>
+						<p className="text-3xl">text-3xl</p>
+						<p className="text-4xl">text-4xl</p>
+						<p className="text-5xl">text-5xl</p>
+
+						<p className="!indent-0">!indent-0</p>
+						<p className="!indent-20">!indent-20</p>
+						<p className="!indent-40">!indent-40</p>
+						<p className="!indent-60">!indent-60</p>
 						<p className="text-justify">
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-							Consectetur qui esse, deserunt saepe nisi libero recusandae
+							text-justify: Lorem ipsum, dolor sit amet consectetur adipisicing
+							elit. Consectetur qui esse, deserunt saepe nisi libero recusandae
 							eligendi corrupti ab? Itaque optio sed sunt incidunt, vel
 							excepturi fugit libero illo iusto!
 						</p>

@@ -55,7 +55,7 @@ export default function ShareButtons() {
 	}
 
 	return (
-		<div className="mb-4 flex flex-col gap-8 rounded-lg bg-muted/40 py-12">
+		<div className="mb-4 flex flex-col gap-8 rounded-lg bg-neutral-200 py-12 dark:bg-neutral-900">
 			{isCopied && (
 				<div className="flex justify-center text-green-600">
 					Page link coppied to clipboard!
